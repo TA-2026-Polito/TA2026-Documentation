@@ -15,7 +15,7 @@ format:
 # 1. What was built
 
 ## Output and Creative Choices
-Descrizione chiara del risultato finale. 
+Descrizione chiara del risultato finale cazzo. 
 Qui puoi inserire i link ai contenuti multimediali come richiesto:
 - [Guarda il video di gameplay](https://youtube.com/...)
 - [Demo interattiva](https://link...)
