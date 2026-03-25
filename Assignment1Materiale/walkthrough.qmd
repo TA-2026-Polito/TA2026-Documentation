@@ -1,0 +1,68 @@
+---
+title: "Titolo del Progetto"
+author: "Il tuo nome / Nome del Gruppo"
+format:
+  revealjs: 
+    theme: dark
+    slide-number: true
+    transition: fade
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+# 1. What was built
+
+## Output and Creative Choices
+Descrizione chiara del risultato finale. 
+Qui puoi inserire i link ai contenuti multimediali come richiesto:
+- [Guarda il video di gameplay](https://youtube.com/...)
+- [Demo interattiva](https://link...)
+
+Nel PDF questa sezione sarà un normale paragrafo, nella presentazione sarà la prima slide.
+
+---
+
+# 2. How it was built
+
+## Process Breakdown
+Qui documentiamo il processo. Ricordati di inserire gli screenshot (non solo i render finali!).
+
+::: {.panel-tabset}
+### Node Graphs
+![Esempio di Node Graph Materiale](images/node_graph.png)
+
+### Scene Hierarchy
+![Gerarchia della scena in Unreal](images/hierarchy.png)
+
+### Blueprints & Control Rig
+Spiegazione della logica dietro i Blueprint usati.
+:::
+
+---
+
+# 3. The biggest challenge
+
+## What went wrong & Resolution
+- **Cosa è stato difficile:** Inserisci qui le difficoltà (es. problemi con l'illuminazione dinamica o il baking).
+- **Cosa è andato storto:** Bug di Unreal Engine, crash, problemi di performance.
+- **Come è stato risolto:** Spiega il workaround o la soluzione tecnica trovata.
+
+---
+
+# 4. Workflow and pipeline
+
+## Tools & Process
+- **Software:** Unreal Engine 5, Maya, Substance Painter, ecc.
+- **Pipeline:** Dal blocco base (greyboxing) fino al texturing e lighting finale. 
+
+---
+
+# 5. References and resources
+
+## Bibliography & Tutorials
+Tutto ciò che è stato consultato:
+1. [Unreal Engine 5 Documentation - Lumen](https://docs.unrealengine.com)
+2. Tutorial indipendente trovato su YouTube: [Lighting Scenarios in UE5](https://youtube.com)
+3. Asset pack utilizzati dallo store.
