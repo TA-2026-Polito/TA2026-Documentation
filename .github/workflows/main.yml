@@ -1,0 +1,29 @@
+name: marp-to-pages
+concurrency: marp-to-pages
+
+on:
+  push:
+    branches: [ main ] # Cambia in 'master' se il tuo branch principale si chiama così
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v3
+
+      - name: Costruisci l'HTML da Markdown con Marp
+        uses: marp-team/setup-marp@v3
+        with:
+          version: latest
+      - run: marp presentazione.md -o index.html # Assicurati che il nome del tuo file md sia corretto
+
+      - name: Pubblica su GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages # Il branch dove verrà salvato l'HTML
