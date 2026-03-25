@@ -1,29 +1,25 @@
-name: marp-to-pages
-concurrency: marp-to-pages
+name: Quarto Publish
 
 on:
   push:
-    branches: [ main ] # Cambia in 'master' se il tuo branch principale si chiama così
+    branches:
+      - main  # Se il tuo branch si chiama 'master', scrivi 'master' al posto di 'main'
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Checkout del codice
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Costruisci l'HTML da Markdown con Marp
-        uses: marp-team/setup-marp@v3
-        with:
-          version: latest
-      - run: marp presentazione.md -o index.html # Assicurati che il nome del tuo file md sia corretto
+      - name: Installa Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Pubblica su GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Converti e Pubblica su GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages # Il branch dove verrà salvato l'HTML
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
