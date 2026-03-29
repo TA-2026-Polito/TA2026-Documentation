@@ -3,9 +3,11 @@ title: "Titolo del Progetto"
 author: "Il tuo nome / Nome del Gruppo"
 format:
   revealjs: 
-    theme: dark
+    theme: night
     slide-number: true
+    smaller: true
     transition: fade
+    scrollable: true
   pdf:
     toc: true
     number-sections: true
@@ -15,32 +17,37 @@ format:
 # 1. What was built
 
 ## Output and Creative Choices
-Descrizione chiara del risultato finale cazzo. 
+Descrizione chiara del risultato finale. 
 Qui puoi inserire i link ai contenuti multimediali come richiesto:
 - [Guarda il video di gameplay](https://youtube.com/...)
 - [Demo interattiva](https://link...)
 
 Nel PDF questa sezione sarà un normale paragrafo, nella presentazione sarà la prima slide.
 
----
-
 # 2. How it was built
 
-## Process Breakdown
-Qui documentiamo il processo. Ricordati di inserire gli screenshot (non solo i render finali!).
+## Generazione del Landscape
+![Spiegazione di come è stato generato il landscape partendo da immagini 2d](images/node_graph.png)
 
-::: {.panel-tabset}
-### Node Graphs
-![Esempio di Node Graph Materiale](images/node_graph.png)
+## PCG per la vegetazione e il path
+![Spiegazione di come sono state impiegate le spline per affrontare la generazione procedurale](images/hierarchy.png)
 
-### Scene Hierarchy
-![Gerarchia della scena in Unreal](images/hierarchy.png)
+## RVT
+Spiegazione dietro al concetto abse di runtime virtual texturing.
 
-### Blueprints & Control Rig
-Spiegazione della logica dietro i Blueprint usati.
-:::
+## Texture World space
+I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità
 
----
+![](consegna_files/vid/world_space_textures.mp4)
+
+## Decals
+Tramite i decals abbiamo aggiunto vita alla scena senza implementare nuove mesh
+
+![](consegna_files/img/decals01.png)
+
+![](consegna_files/img/decals02.png)
+
+![](consegna_files/img/decals03.png)
 
 # 3. The biggest challenge
 
@@ -49,15 +56,11 @@ Spiegazione della logica dietro i Blueprint usati.
 - **Cosa è andato storto:** Bug di Unreal Engine, crash, problemi di performance.
 - **Come è stato risolto:** Spiega il workaround o la soluzione tecnica trovata.
 
----
-
 # 4. Workflow and pipeline
 
 ## Tools & Process
 - **Software:** Unreal Engine 5, Maya, Substance Painter, ecc.
 - **Pipeline:** Dal blocco base (greyboxing) fino al texturing e lighting finale. 
-
----
 
 # 5. References and resources
 
@@ -65,4 +68,12 @@ Spiegazione della logica dietro i Blueprint usati.
 Tutto ciò che è stato consultato:
 1. [Unreal Engine 5 Documentation - Lumen](https://docs.unrealengine.com)
 2. Tutorial indipendente trovato su YouTube: [Lighting Scenarios in UE5](https://youtube.com)
-3. Asset pack utilizzati dallo store.
+
+## Assets Impiegati
+### Casa e Interni
+1. [Hane Studios - Cigar Room Environment](https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4)
+2. [Laglanz - Modular Rural House & Pine Forest Environment](https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73)
+3. [Next Level 3D - Free Furniture Pack](https://www.fab.com/listings/baece383-bc75-4de8-971d-25110a169a36)
+4. [Quixel Megascans - Antique Rug](https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c)
+5. [Quixel Megascans - Saloon Interior](https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e)
+6. [TijerinArt - Wall decoration of grapes made of cork stoppers](https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61)

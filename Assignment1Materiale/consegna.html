@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="consegna_files/libs/revealjs/dist/theme/quarto-4df01d85d5cf19cc6202400f4f043f84.css">
+  <link rel="stylesheet" href="consegna_files/libs/revealjs/dist/theme/quarto-422092a5e00d6ffa3175d97bbb8f7ab9.css">
   <link href="consegna_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="consegna_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="consegna_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -48,6 +48,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -148,47 +149,37 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="output-and-creative-choices" class="slide level2">
 <h2>Output and Creative Choices</h2>
-<p>Descrizione chiara del risultato finale cazzo. Qui puoi inserire i link ai contenuti multimediali come richiesto: - <a href="https://youtube.com/...">Guarda il video di gameplay</a> - <a href="https://link...">Demo interattiva</a></p>
+<p>Descrizione chiara del risultato finale. Qui puoi inserire i link ai contenuti multimediali come richiesto: - <a href="https://youtube.com/...">Guarda il video di gameplay</a> - <a href="https://link...">Demo interattiva</a></p>
 <p>Nel PDF questa sezione sarà un normale paragrafo, nella presentazione sarà la prima slide.</p>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="how-it-was-built" class="title-slide slide level1 center">
 <h1>2. How it was built</h1>
 
 </section>
-<section id="process-breakdown" class="slide level2">
-<h2>Process Breakdown</h2>
-<p>Qui documentiamo il processo. Ricordati di inserire gli screenshot (non solo i render finali!).</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Node Graphs</a></li><li><a href="#tabset-1-2">Scene Hierarchy</a></li><li><a href="#tabset-1-3">Blueprints &amp; Control Rig</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/node_graph.png"></p>
-<figcaption>Esempio di Node Graph Materiale</figcaption>
-</figure>
-</div>
-</div>
-<div id="tabset-1-2">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/hierarchy.png"></p>
-<figcaption>Gerarchia della scena in Unreal</figcaption>
-</figure>
-</div>
-</div>
-<div id="tabset-1-3">
-<p>Spiegazione della logica dietro i Blueprint usati.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
+<section id="generazione-del-landscape" class="slide level2">
+<h2>Generazione del Landscape</h2>
 
+<img data-src="images/node_graph.png" class="r-stretch quarto-figure-center"><p class="caption">Spiegazione di come è stato generato il landscape partendo da immagini 2d</p></section>
+<section id="pcg-per-la-vegetazione-e-il-path" class="slide level2">
+<h2>PCG per la vegetazione e il path</h2>
+
+<img data-src="images/hierarchy.png" class="r-stretch quarto-figure-center"><p class="caption">Spiegazione di come sono state impiegate le spline per affrontare la generazione procedurale</p></section>
+<section id="rvt" class="slide level2">
+<h2>RVT</h2>
+<p>Spiegazione dietro al concetto abse di runtime virtual texturing.</p>
+</section>
+<section id="texture-world-space" class="slide level2">
+<h2>Texture World space</h2>
+<p>I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità</p>
+<p><video data-src="consegna_files/vid/world_space_textures.mp4" controls=""><a href="consegna_files/vid/world_space_textures.mp4">Video</a></video></p>
+</section>
+<section id="decals" class="slide level2">
+<h2>Decals</h2>
+<p>Tramite i decals abbiamo aggiunto vita alla scena senza implementare nuove mesh</p>
+<p><img data-src="consegna_files/img/decals01.png"></p>
+<p><img data-src="consegna_files/img/decals02.png"></p>
+<p><img data-src="consegna_files/img/decals03.png"></p>
 </section></section>
 <section>
 <section id="the-biggest-challenge" class="title-slide slide level1 center">
@@ -202,9 +193,6 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Cosa è andato storto:</strong> Bug di Unreal Engine, crash, problemi di performance.</li>
 <li><strong>Come è stato risolto:</strong> Spiega il workaround o la soluzione tecnica trovata.</li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="workflow-and-pipeline" class="title-slide slide level1 center">
@@ -217,9 +205,6 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Software:</strong> Unreal Engine 5, Maya, Substance Painter, ecc.</li>
 <li><strong>Pipeline:</strong> Dal blocco base (greyboxing) fino al texturing e lighting finale.</li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="references-and-resources" class="title-slide slide level1 center">
@@ -228,7 +213,19 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="bibliography-tutorials" class="slide level2">
 <h2>Bibliography &amp; Tutorials</h2>
-<p>Tutto ciò che è stato consultato: 1. <a href="https://docs.unrealengine.com">Unreal Engine 5 Documentation - Lumen</a> 2. Tutorial indipendente trovato su YouTube: <a href="https://youtube.com">Lighting Scenarios in UE5</a> 3. Asset pack utilizzati dallo store.</p>
+<p>Tutto ciò che è stato consultato: 1. <a href="https://docs.unrealengine.com">Unreal Engine 5 Documentation - Lumen</a> 2. Tutorial indipendente trovato su YouTube: <a href="https://youtube.com">Lighting Scenarios in UE5</a></p>
+</section>
+<section id="assets-impiegati" class="slide level2 scrollable">
+<h2>Assets Impiegati</h2>
+<h3 id="casa-e-interni">Casa e Interni</h3>
+<ol type="1">
+<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></li>
+<li><a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest Environment</a></li>
+<li><a href="https://www.fab.com/listings/baece383-bc75-4de8-971d-25110a169a36">Next Level 3D - Free Furniture Pack</a></li>
+<li><a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Megascans - Antique Rug</a></li>
+<li><a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Quixel Megascans - Saloon Interior</a></li>
+<li><a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration of grapes made of cork stoppers</a></li>
+</ol>
 
 </section></section>
     </div>
@@ -267,7 +264,7 @@ Il tuo nome / Nome del Gruppo
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
