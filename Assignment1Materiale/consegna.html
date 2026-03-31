@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Il tuo nome / Nome del Gruppo">
-  <title>Titolo del Progetto</title>
+  <title>Technical Post-Mortem: Environment Artist Workflow</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -131,7 +131,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Titolo del Progetto</h1>
+  <h1 class="title">Technical Post-Mortem: Environment Artist Workflow</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -143,89 +143,153 @@ Il tuo nome / Nome del Gruppo
 
 </section>
 <section>
-<section id="what-was-built" class="title-slide slide level1 center">
-<h1>1. What was built</h1>
+<section id="panoramica-dellambiente" class="title-slide slide level1 center">
+<h1>1. 🏗️ Panoramica dell’ambiente</h1>
 
 </section>
-<section id="output-and-creative-choices" class="slide level2">
-<h2>Output and Creative Choices</h2>
-<p>Descrizione chiara del risultato finale. Qui puoi inserire i link ai contenuti multimediali come richiesto: - <a href="https://youtube.com/...">Guarda il video di gameplay</a> - <a href="https://link...">Demo interattiva</a></p>
-<p>Nel PDF questa sezione sarà un normale paragrafo, nella presentazione sarà la prima slide.</p>
+<section id="la-scena-e-la-direzione-artistica" class="slide level2">
+<h2>La Scena e la Direzione Artistica</h2>
+<p>L’obiettivo è stato lo sviluppo di un environment 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un’architettura rustica (interior).</p>
+<p>L’ispirazione principale sono state le ambientazioni naturali e fiabesche di Hayao Miyazaki (“Il Castello Errante di Howl”, “La Città Incantata”). Per l’estetica della flora abbiamo puntato a un effetto luminoso e morbido ispirato all’animazione giapponese, unito al mondo di “The Witcher 3” per l’uso di materiali e dettagli realistici.</p>
+</section>
+<section id="moodboard-concept-art" class="slide level2">
+<h2>Moodboard &amp; Concept Art</h2>
+<p>La moodboard è stata costruita con immagini di paesaggi montani, prati fioriti e case di campagna, con attenzione alla luce e ai colori. Abbiamo raccolto reference da film, videogiochi e fotografie reali per creare un mix unico.</p>
+<p>🔗 <strong><a href="https://miro.com/app/board/uXjVGxbIRlA=/?share_link_id=457435760422">Guarda la Moodboard completa su Miro</a></strong></p>
+</section>
+<section id="il-punto-di-partenza-greyboxing" class="slide level2">
+<h2>Il punto di partenza: Greyboxing</h2>
+<p><em>Fase di Blocking per stabilire la scala e le proporzioni della vallata.</em> <iframe data-external="1" src="https://www.youtube.com/embed/j_9f0L7xREE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section>
+<section id="showcase-girasoli" class="slide level2">
+<h2>Showcase: Girasoli</h2>
+<p><em>Panoramica ravvicinata dell’estetica dei fiori e del Subsurface Scattering.</em> <iframe data-external="1" src="https://www.youtube.com/embed/WnMNuRNU81Y" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section>
+<section id="showcase-la-casa" class="slide level2">
+<h2>Showcase: La Casa</h2>
+<p><em>Visuale dei moduli architettonici immersi nel paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/PXDBmbBSjjk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section></section>
 <section>
-<section id="how-it-was-built" class="title-slide slide level1 center">
-<h1>2. How it was built</h1>
+<section id="decisioni-chiave" class="title-slide slide level1 center">
+<h1>2. 🎯 Decisioni Chiave</h1>
 
 </section>
-<section id="generazione-del-landscape" class="slide level2">
-<h2>Generazione del Landscape</h2>
-
-<img data-src="images/node_graph.png" class="r-stretch quarto-figure-center"><p class="caption">Spiegazione di come è stato generato il landscape partendo da immagini 2d</p></section>
-<section id="pcg-per-la-vegetazione-e-il-path" class="slide level2">
-<h2>PCG per la vegetazione e il path</h2>
-
-<img data-src="images/hierarchy.png" class="r-stretch quarto-figure-center"><p class="caption">Spiegazione di come sono state impiegate le spline per affrontare la generazione procedurale</p></section>
-<section id="rvt" class="slide level2">
-<h2>RVT</h2>
-<p>Spiegazione dietro al concetto abse di runtime virtual texturing.</p>
-</section>
-<section id="texture-world-space" class="slide level2">
-<h2>Texture World space</h2>
-<p>I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità</p>
-<p><video data-src="consegna_files/vid/world_space_textures.mp4" controls=""><a href="consegna_files/vid/world_space_textures.mp4">Video</a></video></p>
-</section>
-<section id="decals" class="slide level2">
-<h2>Decals</h2>
-<p>Tramite i decals abbiamo aggiunto vita alla scena senza implementare nuove mesh</p>
-<p><img data-src="consegna_files/img/decals01.png"></p>
-<p><img data-src="consegna_files/img/decals02.png"></p>
-<p><img data-src="consegna_files/img/decals03.png"></p>
+<section id="le-scelte-che-hanno-definito-la-scena" class="slide level2 scrollable">
+<h2>Le scelte che hanno definito la scena</h2>
+<ol type="1">
+<li><strong>Clustering Procedurale (Density Noise):</strong> Invece di spargere fiori casualmente, abbiamo forzato il PCG a creare macchie dense di colore intervallate da verde vuoto, dando un forte senso di ordine e direzione artistica.</li>
+<li><strong>Architettura Non-Distruttiva:</strong> L’uso del <em>World Space Texturing</em> per i moduli della casa ha garantito consistenza visiva, eliminando le soluzioni di continuità sui modelli modulari e le UV.</li>
+<li><strong>Estetica via SSS:</strong> Per ottenere l’effetto morbido della flora, abbiamo spinto molto sui materiali con Subsurface Scattering (SSS), permettendo alla luce di trasparire in modo evidente attraverso petali e foglie.</li>
+</ol>
 </section></section>
 <section>
-<section id="the-biggest-challenge" class="title-slide slide level1 center">
-<h1>3. The biggest challenge</h1>
+<section id="tool-breakdown" class="title-slide slide level1 center">
+<h1>3. 🛠️ Tool Breakdown</h1>
+
+</section>
+<section id="terrain-generation-auto-material" class="slide level2">
+<h2>Terrain Generation &amp; Auto-Material</h2>
+<p>La base del mondo è stata costruita concentrandosi su montagne con picchi aguzzi e segni di erosione glaciale.</p>
+<ul>
+<li><strong>Heightmaps:</strong> Come base per il terreno realistico, sono state impiegate Heightmap esterne ad altissima fedeltà.</li>
+<li><strong>Landscape Auto-Material:</strong> Sviluppato per applicare automaticamente una texture di neve sulle cime (basandosi sull’asse Z e le normali), lasciando la roccia sui pendii ripidi e il terreno fertile a valle.</li>
+</ul>
+</section>
+<section id="landscape-node-graph" class="slide level2">
+<h2>Landscape Node Graph</h2>
+
+<img data-src="images/node_graph_material.png" class="r-stretch quarto-figure-center"><p class="caption">Node Graph dell’Auto-Material</p></section>
+<section id="foliage-pcg-spline-workflow" class="slide level2">
+<h2>Foliage, PCG &amp; Spline Workflow</h2>
+<p>L’intera vegetazione è gestita tramite <strong>PCG</strong>, guidato da un rigoroso <strong>Spline Workflow</strong> per tracciare i confini del prato, i sentieri e l’area della casa.</p>
+<ul>
+<li><strong>Alberi e Megaplants:</strong> I pini sono stati generati usando i nuovi asset <em>Megaplants</em>, integrati nel volume PCG con regole spaziali per limitare lo spawn alle zone di transizione.</li>
+</ul>
+
+<img data-src="images/pcg_spline.png" class="r-stretch quarto-figure-center"><p class="caption">Gerarchia PCG e Spline</p></section>
+<section id="showcase-pcg-sentiero-spline" class="slide level2">
+<h2>Showcase PCG: Sentiero Spline</h2>
+<p><em>Dimostrazione di come la Spline modella dinamicamente il sentiero nel terreno.</em> <iframe data-external="1" src="https://www.youtube.com/embed/vFEmwHa85T4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section>
+<section id="showcase-pcg-grass-volume" class="slide level2">
+<h2>Showcase PCG: Grass Volume</h2>
+<p><em>Generazione procedurale dell’erba e integrazione con il paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/ivKtxmdqfZA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section>
+<section id="world-space-texturing-decals" class="slide level2">
+<h2>World Space Texturing &amp; Decals</h2>
+<p>Per le strutture architettoniche:</p>
+<ul>
+<li><strong>World Space Texturing:</strong> Le texture della casa sono proiettate in base alla posizione nel mondo 3D, garantendo un aspect ratio sempre perfetto tra i vari pezzi modulari.</li>
+<li><strong>Decals:</strong> Immagini e usura sono stati “stampati” sulle superfici aggiungendo micro-dettagli realistici senza pesare sulla geometria.</li>
+</ul>
+
+<img data-src="images/decals_showcase.png" class="r-stretch quarto-figure-center"><p class="caption">Dettaglio dei Decals applicati</p></section>
+<section id="dimostrazione-world-space-texturing" class="slide level2">
+<h2>Dimostrazione World Space Texturing</h2>
+<p><em>In questo video è possibile notare come la texture rimanga fissa e coerente spostando l’oggetto nello spazio 3D.</em> <iframe data-external="1" src="https://www.youtube.com/embed/X4s7fRkRcfg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</section></section>
+<section>
+<section id="lighting-breakdown" class="title-slide slide level1 center">
+<h1>4. 💡 Lighting Breakdown</h1>
+
+</section>
+<section id="atmosphere-wind-lighting" class="slide level2">
+<h2>Atmosphere, Wind &amp; Lighting</h2>
+<p>L’atmosfera gioca un ruolo cruciale nella scala della scena.</p>
+<ul>
+<li><strong>Nebbia Volumetrica:</strong> Una <em>Exponential Height Fog</em> fitta ristagna in basso nella valle e si dirada salendo.</li>
+<li><strong>Volumetric Clouds &amp; God Rays:</strong> Nuvole pesanti permettono alla luce di filtrare creando “raggi divini”.</li>
+<li><strong>Vento Dinamico:</strong> I materiali reagiscono in tempo reale al vento, aumentando la vitalità del livello.</li>
+</ul>
+</section>
+<section id="ciclo-giornonotte" class="slide level2">
+<h2>Ciclo Giorno/Notte</h2>
+<p>L’illuminazione non è statica ma è governata da un sistema dinamico.</p>
+<p><em>(Inserisci qui la descrizione tecnica: es. Abbiamo implementato un Blueprint che fa ruotare la Directional Light e aggiorna in tempo reale la Sky Sphere, modificando l’esposizione di Lumen e la temperatura colore della scena passando dall’alba al tramonto fino alla notte.)</em></p>
+</section>
+<section id="dettagli-ambientali-illuminazione" class="slide level2">
+<h2>Dettagli Ambientali &amp; Illuminazione</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/1sr_eN3_2cQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section></section>
+<section>
+<section id="asset-breakdown" class="title-slide slide level1 center">
+<h1>5. 📦 Asset Breakdown</h1>
+
+</section>
+<section id="provenienza-e-tipologia" class="slide level2">
+<h2>Provenienza e Tipologia</h2>
+<p>Abbiamo combinato asset ad alta fedeltà per ottimizzare i tempi di produzione:</p>
+<ul>
+<li><strong>Heightmaps:</strong> <a href="https://www.motionforgepictures.com/height-maps/">Motion Forge Pictures - Height Maps realistiche</a></li>
+<li><strong>Megascans e Decorazioni:</strong> <a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Antique Rug</a>, <a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Saloon Interior</a>, <a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration</a></li>
+<li><strong>Strutture ed Esterni (Fab.com):</strong> * <a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest</a>
+<ul>
+<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="tutorial-tecnici-di-riferimento" class="slide level2 scrollable">
+<h2>Tutorial Tecnici di Riferimento</h2>
+<ol type="1">
+<li><a href="https://www.youtube.com/watch?v=h00fXTGmqxI">You Won’t Believe How Easy City Streets Can Be in UE5 Using PCG</a></li>
+<li><a href="https://www.youtube.com/watch?v=or2TJI2rwpA">UE5 Landscape Auto Material - The Beginning</a></li>
+<li><a href="https://www.youtube.com/watch?v=vY20bciBDsU">NCA TEMPLATE | UE 5 | PCG Megaplants</a></li>
+<li><a href="https://youtu.be/4TZG9fBEiR0">UE5 Megaplants - How to Use in PCG</a></li>
+</ol>
+</section></section>
+<section>
+<section id="la-sfida-più-grande" class="title-slide slide level1 center">
+<h1>6. 🔥 La sfida più grande</h1>
 
 </section>
 <section id="what-went-wrong-resolution" class="slide level2">
 <h2>What went wrong &amp; Resolution</h2>
 <ul>
-<li><strong>Cosa è stato difficile:</strong> Inserisci qui le difficoltà (es. problemi con l’illuminazione dinamica o il baking).</li>
-<li><strong>Cosa è andato storto:</strong> Bug di Unreal Engine, crash, problemi di performance.</li>
-<li><strong>Come è stato risolto:</strong> Spiega il workaround o la soluzione tecnica trovata.</li>
+<li><strong>PCG Spline Routing:</strong> Integrare le Spline nel PCG ha richiesto di capire come instradare i dati spaziali e debuggare visivamente i punti di spawn prima della generazione.</li>
+<li><strong>Landscape &amp; Nanite:</strong> Abilitare Nanite sul Landscape ha introdotto sfide prestazionali enormi, risolte scendendo a compromessi e bilanciando i sample del terreno.</li>
+<li><strong>Megaplants Integration:</strong> Questa feature ci ha costretto ad abbandonare i classici “Static Mesh Spawner” nel PCG in favore di un nuovo e complesso sistema di istanziazione.</li>
+<li><strong>Mie Scattering:</strong> L’illuminazione volumetrica slavava i colori della vegetazione in lontananza. Risolto abbassando la scala del <em>Mie Scattering</em> nei settaggi atmosferici.</li>
 </ul>
-</section></section>
-<section>
-<section id="workflow-and-pipeline" class="title-slide slide level1 center">
-<h1>4. Workflow and pipeline</h1>
-
-</section>
-<section id="tools-process" class="slide level2">
-<h2>Tools &amp; Process</h2>
-<ul>
-<li><strong>Software:</strong> Unreal Engine 5, Maya, Substance Painter, ecc.</li>
-<li><strong>Pipeline:</strong> Dal blocco base (greyboxing) fino al texturing e lighting finale.</li>
-</ul>
-</section></section>
-<section>
-<section id="references-and-resources" class="title-slide slide level1 center">
-<h1>5. References and resources</h1>
-
-</section>
-<section id="bibliography-tutorials" class="slide level2">
-<h2>Bibliography &amp; Tutorials</h2>
-<p>Tutto ciò che è stato consultato: 1. <a href="https://docs.unrealengine.com">Unreal Engine 5 Documentation - Lumen</a> 2. Tutorial indipendente trovato su YouTube: <a href="https://youtube.com">Lighting Scenarios in UE5</a></p>
-</section>
-<section id="assets-impiegati" class="slide level2 scrollable">
-<h2>Assets Impiegati</h2>
-<h3 id="casa-e-interni">Casa e Interni</h3>
-<ol type="1">
-<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></li>
-<li><a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest Environment</a></li>
-<li><a href="https://www.fab.com/listings/baece383-bc75-4de8-971d-25110a169a36">Next Level 3D - Free Furniture Pack</a></li>
-<li><a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Megascans - Antique Rug</a></li>
-<li><a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Quixel Megascans - Saloon Interior</a></li>
-<li><a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration of grapes made of cork stoppers</a></li>
-</ol>
 
 </section></section>
     </div>
