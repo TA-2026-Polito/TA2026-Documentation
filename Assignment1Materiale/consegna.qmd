@@ -22,7 +22,8 @@ format:
 # 1. 🏗️ Panoramica dell'ambiente
 
 ## Final Showreel
-*Il montaggio finale che riassume l'intero lavoro di Environment Art e l'atmosfera della nostra scena.*
+{{< video https://vimeo.com/1178971642?share=copy&fl=sv&fe=ci width="100%" height="85%" >}}
+
 ---
 ## La Scena e la Direzione Artistica
 L'obiettivo è stato sviluppare un ambiente 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un'architettura rustica (interior). 
