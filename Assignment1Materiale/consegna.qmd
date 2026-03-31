@@ -49,6 +49,9 @@ Tramite i decals abbiamo aggiunto vita alla scena senza implementare nuove mesh
 
 ![](consegna_files/img/decals03.png)
 
+## Ciclo Giorno/Notte
+Descrizione del funzionamento del ciclo giorno notte e di tutto ciò che dipende da esso
+
 # 3. The biggest challenge
 
 ## What went wrong & Resolution
