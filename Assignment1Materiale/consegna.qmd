@@ -22,9 +22,11 @@ format:
 # 1. 🏗️ Panoramica dell'ambiente
 
 ## La Scena e la Direzione Artistica
-L'obiettivo è stato lo sviluppo di un environment 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un'architettura rustica (interior). 
+L'obiettivo è stato sviluppare un ambiente 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un'architettura rustica (interior). 
 
-L'ispirazione principale sono state le ambientazioni naturali e fiabesche di Hayao Miyazaki ("Il Castello Errante di Howl", "La Città Incantata"). Per l'estetica della flora abbiamo puntato a un effetto luminoso e morbido ispirato all'animazione giapponese, unito al mondo di "The Witcher 3" per l'uso di materiali e dettagli realistici.
+Le ispirazioni principali sono state le ambientazioni naturali e fiabesche di Hayao Miyazaki ("Il Castello Errante di Howl", "La Città Incantata"). 
+
+Per l'estetica della flora abbiamo puntato a un effetto luminoso e morbido ispirato all'animazione giapponese, unito al mondo di "The Witcher 3" per l'uso di materiali e dettagli realistici.
 
 ## Moodboard & Concept Art
 La moodboard è stata costruita con immagini di paesaggi montani, prati fioriti e case di campagna, con attenzione alla luce e ai colori. Abbiamo raccolto reference da film, videogiochi e fotografie reali per creare un mix unico.
@@ -33,32 +35,32 @@ La moodboard è stata costruita con immagini di paesaggi montani, prati fioriti 
 
 ## Il punto di partenza: Greyboxing
 *Fase di Blocking per stabilire la scala e le proporzioni della vallata.*
-{{< video https://youtu.be/j_9f0L7xREE >}}
+{{< video https://youtu.be/j_9f0L7xREE width="100%" height="85%" >}}
 
-## Showcase: Girasoli
+## Showcase: Fiori
 *Panoramica ravvicinata dell'estetica dei fiori e del Subsurface Scattering.*
-{{< video https://youtu.be/WnMNuRNU81Y >}}
+{{< video https://youtu.be/WnMNuRNU81Y width="100%" height="85%" >}}
 
 ## Showcase: La Casa
 *Visuale dei moduli architettonici immersi nel paesaggio.*
-{{< video https://youtu.be/PXDBmbBSjjk >}}
+{{< video https://youtu.be/PXDBmbBSjjk width="100%" height="85%" >}}
 
 
 # 2. 🎯 Decisioni Chiave
 
 ## Le scelte che hanno definito la scena
 
-1. **Clustering Procedurale (Density Noise):** Invece di spargere fiori casualmente, abbiamo forzato il PCG a creare macchie dense di colore intervallate da verde vuoto, dando un forte senso di ordine e direzione artistica.
+1. **Clustering Procedurale (Density Noise):** Invece di spargere fiori manualmente, abbiamo generato proceduralmente, tramite PCG, macchie dense di colore intervallate da verde vuoto così da ottenere un forte senso di ordine e direzione artistica.
 2. **Architettura Non-Distruttiva:** L'uso del *World Space Texturing* per i moduli della casa ha garantito consistenza visiva, eliminando le soluzioni di continuità sui modelli modulari e le UV.
 3. **Estetica via SSS:** Per ottenere l'effetto morbido della flora, abbiamo spinto molto sui materiali con Subsurface Scattering (SSS), permettendo alla luce di trasparire in modo evidente attraverso petali e foglie.
 
 
 # 3. 🛠️ Tool Breakdown
 
-## Terrain Generation & Auto-Material
+## Generazione del terreno & Auto-Material
 La base del mondo è stata costruita concentrandosi su montagne con picchi aguzzi e segni di erosione glaciale.
 
-* **Heightmaps:** Come base per il terreno realistico, sono state impiegate Heightmap esterne ad altissima fedeltà.
+* **Heightmaps:** Come base per ottenere un terreno realistico, sono state impiegate Heightmap esterne ad altissima fedeltà.
 * **Landscape Auto-Material:** Sviluppato per applicare automaticamente una texture di neve sulle cime (basandosi sull'asse Z e le normali), lasciando la roccia sui pendii ripidi e il terreno fertile a valle.
 
 ## Landscape Node Graph
@@ -73,41 +75,50 @@ L'intera vegetazione è gestita tramite **PCG**, guidato da un rigoroso **Spline
 
 ## Showcase PCG: Sentiero Spline
 *Dimostrazione di come la Spline modella dinamicamente il sentiero nel terreno.*
-{{< video https://youtu.be/vFEmwHa85T4 >}}
+{{< video https://youtu.be/vFEmwHa85T4 width="100%" height="85%" >}}
 
 ## Showcase PCG: Grass Volume
 *Generazione procedurale dell'erba e integrazione con il paesaggio.*
-{{< video https://youtu.be/ivKtxmdqfZA >}}
+{{< video https://youtu.be/ivKtxmdqfZA width="100%" height="85%" >}}
 
-## World Space Texturing & Decals
-Per le strutture architettoniche:
+## Showcase PCG: Trees Volume
+*Generazione procedurale degli alberi e integrazione con il paesaggio.*
 
-* **World Space Texturing:** Le texture della casa sono proiettate in base alla posizione nel mondo 3D, garantendo un aspect ratio sempre perfetto tra i vari pezzi modulari.
-* **Decals:** Immagini e usura sono stati "stampati" sulle superfici aggiungendo micro-dettagli realistici senza pesare sulla geometria.
+## World Space Texturing
 
-![Dettaglio dei Decals applicati](images/decals_showcase.png)
+I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità
 
-## Dimostrazione World Space Texturing
-*In questo video è possibile notare come la texture rimanga fissa e coerente spostando l'oggetto nello spazio 3D.*
-{{< video https://youtu.be/X4s7fRkRcfg >}}
+{{< video https://youtu.be/X4s7fRkRcfg width="100%" height="85%" >}}
+
+## Decals
+
+Decorazioni e usura sono stati "stampati" sulle superfici aggiungendo micro-dettagli realistici senza pesare sulla geometria.
+
+![](consegna_files/img/decals01.png)
+
+![](consegna_files/img/decals02.png)
+
+![](consegna_files/img/decals03.png)
 
 
-# 4. 💡 Lighting Breakdown
+# 4. 💡 Breakdown dell'Illuminazione
 
-## Atmosphere, Wind & Lighting
+## Atmosfera, Vento & Illuminazione
 L'atmosfera gioca un ruolo cruciale nella scala della scena.
 
 * **Nebbia Volumetrica:** Una *Exponential Height Fog* fitta ristagna in basso nella valle e si dirada salendo.
-* **Volumetric Clouds & God Rays:** Nuvole pesanti permettono alla luce di filtrare creando "raggi divini".
+* **Nuvole Volumetriche & God Rays:** Nuvole pesanti permettono alla luce di filtrare creando "raggi divini".
 * **Vento Dinamico:** I materiali reagiscono in tempo reale al vento, aumentando la vitalità del livello.
 
 ## Ciclo Giorno/Notte
-L'illuminazione non è statica ma è governata da un sistema dinamico. 
+L'illuminazione non è statica ma è governata da un sistema tramite il quale si definiscono i periodi di giorno/notte dell'ambiente. Con l'arrivo della notte, tutte le luci col tag "SwitchingLight" vengono accese. L'ambiente è vivo, e reagisce ai cambi di orario
 
-*(Inserisci qui la descrizione tecnica: es. Abbiamo implementato un Blueprint che fa ruotare la Directional Light e aggiorna in tempo reale la Sky Sphere, modificando l'esposizione di Lumen e la temperatura colore della scena passando dall'alba al tramonto fino alla notte.)*
+![](consegna_files/img/DNCycleBegin.png)
+![](consegna_files/img/DNCycleTick.png)
+
 
 ## Dettagli Ambientali & Illuminazione
-{{< video https://youtu.be/1sr_eN3_2cQ >}}
+{{< video https://youtu.be/1sr_eN3_2cQ width="100%" height="85%" >}}
 
 
 # 5. 📦 Asset Breakdown
@@ -117,7 +128,10 @@ Abbiamo combinato asset ad alta fedeltà per ottimizzare i tempi di produzione:
 
 * **Heightmaps:** [Motion Forge Pictures - Height Maps realistiche](https://www.motionforgepictures.com/height-maps/)
 * **Megascans e Decorazioni:** [Quixel Antique Rug](https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c), [Saloon Interior](https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e), [TijerinArt - Wall decoration](https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61)
-* **Strutture ed Esterni (Fab.com):** * [Laglanz - Modular Rural House & Pine Forest](https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73)
+* **Strutture ed Esterni (Fab.com):** 
+
+  * [Laglanz - Modular Rural House & Pine Forest](https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73)
+
   * [Hane Studios - Cigar Room Environment](https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4)
 
 ## Tutorial Tecnici di Riferimento
@@ -127,11 +141,10 @@ Abbiamo combinato asset ad alta fedeltà per ottimizzare i tempi di produzione:
 4. [UE5 Megaplants - How to Use in PCG](https://youtu.be/4TZG9fBEiR0)
 
 
-# 6. 🔥 La sfida più grande
-
-## What went wrong & Resolution
+# 6. 🔥 Le sfide maggiori
 
 * **PCG Spline Routing:** Integrare le Spline nel PCG ha richiesto di capire come instradare i dati spaziali e debuggare visivamente i punti di spawn prima della generazione.
 * **Landscape & Nanite:** Abilitare Nanite sul Landscape ha introdotto sfide prestazionali enormi, risolte scendendo a compromessi e bilanciando i sample del terreno.
-* **Megaplants Integration:** Questa feature ci ha costretto ad abbandonare i classici "Static Mesh Spawner" nel PCG in favore di un nuovo e complesso sistema di istanziazione.
+* **Integrazione Megaplants:** Questa feature ci ha costretto ad abbandonare i classici "Static Mesh Spawner" nel PCG in favore di un nuovo e complesso sistema di istanziazione.
 * **Mie Scattering:** L'illuminazione volumetrica slavava i colori della vegetazione in lontananza. Risolto abbassando la scala del *Mie Scattering* nei settaggi atmosferici.
+* **Uniformità negli interni:** La costruzione degli interni è avvenuta impiegando asset provenienti da pack diversi, il che ha portato alla necessità di modificare i materiali per creare coerenza e dare un feel caldo, accogliente e soprattuto coeso alla casa.

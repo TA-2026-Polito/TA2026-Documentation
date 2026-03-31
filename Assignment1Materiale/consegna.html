@@ -149,8 +149,9 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="la-scena-e-la-direzione-artistica" class="slide level2">
 <h2>La Scena e la Direzione Artistica</h2>
-<p>L’obiettivo è stato lo sviluppo di un environment 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un’architettura rustica (interior).</p>
-<p>L’ispirazione principale sono state le ambientazioni naturali e fiabesche di Hayao Miyazaki (“Il Castello Errante di Howl”, “La Città Incantata”). Per l’estetica della flora abbiamo puntato a un effetto luminoso e morbido ispirato all’animazione giapponese, unito al mondo di “The Witcher 3” per l’uso di materiali e dettagli realistici.</p>
+<p>L’obiettivo è stato sviluppare un ambiente 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un’architettura rustica (interior).</p>
+<p>Le ispirazioni principali sono state le ambientazioni naturali e fiabesche di Hayao Miyazaki (“Il Castello Errante di Howl”, “La Città Incantata”).</p>
+<p>Per l’estetica della flora abbiamo puntato a un effetto luminoso e morbido ispirato all’animazione giapponese, unito al mondo di “The Witcher 3” per l’uso di materiali e dettagli realistici.</p>
 </section>
 <section id="moodboard-concept-art" class="slide level2">
 <h2>Moodboard &amp; Concept Art</h2>
@@ -159,15 +160,15 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="il-punto-di-partenza-greyboxing" class="slide level2">
 <h2>Il punto di partenza: Greyboxing</h2>
-<p><em>Fase di Blocking per stabilire la scala e le proporzioni della vallata.</em> <iframe data-external="1" src="https://www.youtube.com/embed/j_9f0L7xREE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<p><em>Fase di Blocking per stabilire la scala e le proporzioni della vallata.</em> <iframe data-external="1" src="https://www.youtube.com/embed/j_9f0L7xREE" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section>
-<section id="showcase-girasoli" class="slide level2">
-<h2>Showcase: Girasoli</h2>
-<p><em>Panoramica ravvicinata dell’estetica dei fiori e del Subsurface Scattering.</em> <iframe data-external="1" src="https://www.youtube.com/embed/WnMNuRNU81Y" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<section id="showcase-fiori" class="slide level2">
+<h2>Showcase: Fiori</h2>
+<p><em>Panoramica ravvicinata dell’estetica dei fiori e del Subsurface Scattering.</em> <iframe data-external="1" src="https://www.youtube.com/embed/WnMNuRNU81Y" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section>
 <section id="showcase-la-casa" class="slide level2">
 <h2>Showcase: La Casa</h2>
-<p><em>Visuale dei moduli architettonici immersi nel paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/PXDBmbBSjjk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<p><em>Visuale dei moduli architettonici immersi nel paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/PXDBmbBSjjk" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section></section>
 <section>
 <section id="decisioni-chiave" class="title-slide slide level1 center">
@@ -177,7 +178,7 @@ Il tuo nome / Nome del Gruppo
 <section id="le-scelte-che-hanno-definito-la-scena" class="slide level2 scrollable">
 <h2>Le scelte che hanno definito la scena</h2>
 <ol type="1">
-<li><strong>Clustering Procedurale (Density Noise):</strong> Invece di spargere fiori casualmente, abbiamo forzato il PCG a creare macchie dense di colore intervallate da verde vuoto, dando un forte senso di ordine e direzione artistica.</li>
+<li><strong>Clustering Procedurale (Density Noise):</strong> Invece di spargere fiori manualmente, abbiamo generato proceduralmente, tramite PCG, macchie dense di colore intervallate da verde vuoto così da ottenere un forte senso di ordine e direzione artistica.</li>
 <li><strong>Architettura Non-Distruttiva:</strong> L’uso del <em>World Space Texturing</em> per i moduli della casa ha garantito consistenza visiva, eliminando le soluzioni di continuità sui modelli modulari e le UV.</li>
 <li><strong>Estetica via SSS:</strong> Per ottenere l’effetto morbido della flora, abbiamo spinto molto sui materiali con Subsurface Scattering (SSS), permettendo alla luce di trasparire in modo evidente attraverso petali e foglie.</li>
 </ol>
@@ -187,11 +188,11 @@ Il tuo nome / Nome del Gruppo
 <h1>3. 🛠️ Tool Breakdown</h1>
 
 </section>
-<section id="terrain-generation-auto-material" class="slide level2">
-<h2>Terrain Generation &amp; Auto-Material</h2>
+<section id="generazione-del-terreno-auto-material" class="slide level2">
+<h2>Generazione del terreno &amp; Auto-Material</h2>
 <p>La base del mondo è stata costruita concentrandosi su montagne con picchi aguzzi e segni di erosione glaciale.</p>
 <ul>
-<li><strong>Heightmaps:</strong> Come base per il terreno realistico, sono state impiegate Heightmap esterne ad altissima fedeltà.</li>
+<li><strong>Heightmaps:</strong> Come base per ottenere un terreno realistico, sono state impiegate Heightmap esterne ad altissima fedeltà.</li>
 <li><strong>Landscape Auto-Material:</strong> Sviluppato per applicare automaticamente una texture di neve sulle cime (basandosi sull’asse Z e le normali), lasciando la roccia sui pendii ripidi e il terreno fertile a valle.</li>
 </ul>
 </section>
@@ -209,47 +210,50 @@ Il tuo nome / Nome del Gruppo
 <img data-src="images/pcg_spline.png" class="r-stretch quarto-figure-center"><p class="caption">Gerarchia PCG e Spline</p></section>
 <section id="showcase-pcg-sentiero-spline" class="slide level2">
 <h2>Showcase PCG: Sentiero Spline</h2>
-<p><em>Dimostrazione di come la Spline modella dinamicamente il sentiero nel terreno.</em> <iframe data-external="1" src="https://www.youtube.com/embed/vFEmwHa85T4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<p><em>Dimostrazione di come la Spline modella dinamicamente il sentiero nel terreno.</em> <iframe data-external="1" src="https://www.youtube.com/embed/vFEmwHa85T4" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section>
 <section id="showcase-pcg-grass-volume" class="slide level2">
 <h2>Showcase PCG: Grass Volume</h2>
-<p><em>Generazione procedurale dell’erba e integrazione con il paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/ivKtxmdqfZA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<p><em>Generazione procedurale dell’erba e integrazione con il paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/ivKtxmdqfZA" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
 </section>
-<section id="world-space-texturing-decals" class="slide level2">
-<h2>World Space Texturing &amp; Decals</h2>
-<p>Per le strutture architettoniche:</p>
-<ul>
-<li><strong>World Space Texturing:</strong> Le texture della casa sono proiettate in base alla posizione nel mondo 3D, garantendo un aspect ratio sempre perfetto tra i vari pezzi modulari.</li>
-<li><strong>Decals:</strong> Immagini e usura sono stati “stampati” sulle superfici aggiungendo micro-dettagli realistici senza pesare sulla geometria.</li>
-</ul>
-
-<img data-src="images/decals_showcase.png" class="r-stretch quarto-figure-center"><p class="caption">Dettaglio dei Decals applicati</p></section>
-<section id="dimostrazione-world-space-texturing" class="slide level2">
-<h2>Dimostrazione World Space Texturing</h2>
-<p><em>In questo video è possibile notare come la texture rimanga fissa e coerente spostando l’oggetto nello spazio 3D.</em> <iframe data-external="1" src="https://www.youtube.com/embed/X4s7fRkRcfg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<section id="showcase-pcg-trees-volume" class="slide level2">
+<h2>Showcase PCG: Trees Volume</h2>
+<p><em>Generazione procedurale degli alberi e integrazione con il paesaggio.</em></p>
+</section>
+<section id="world-space-texturing" class="slide level2">
+<h2>World Space Texturing</h2>
+<p>I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità</p>
+<iframe data-external="1" src="https://www.youtube.com/embed/X4s7fRkRcfg" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="decals" class="slide level2">
+<h2>Decals</h2>
+<p>Decorazioni e usura sono stati “stampati” sulle superfici aggiungendo micro-dettagli realistici senza pesare sulla geometria.</p>
+<p><img data-src="consegna_files/img/decals01.png"></p>
+<p><img data-src="consegna_files/img/decals02.png"></p>
+<p><img data-src="consegna_files/img/decals03.png"></p>
 </section></section>
 <section>
-<section id="lighting-breakdown" class="title-slide slide level1 center">
-<h1>4. 💡 Lighting Breakdown</h1>
+<section id="breakdown-dellilluminazione" class="title-slide slide level1 center">
+<h1>4. 💡 Breakdown dell’Illuminazione</h1>
 
 </section>
-<section id="atmosphere-wind-lighting" class="slide level2">
-<h2>Atmosphere, Wind &amp; Lighting</h2>
+<section id="atmosfera-vento-illuminazione" class="slide level2">
+<h2>Atmosfera, Vento &amp; Illuminazione</h2>
 <p>L’atmosfera gioca un ruolo cruciale nella scala della scena.</p>
 <ul>
 <li><strong>Nebbia Volumetrica:</strong> Una <em>Exponential Height Fog</em> fitta ristagna in basso nella valle e si dirada salendo.</li>
-<li><strong>Volumetric Clouds &amp; God Rays:</strong> Nuvole pesanti permettono alla luce di filtrare creando “raggi divini”.</li>
+<li><strong>Nuvole Volumetriche &amp; God Rays:</strong> Nuvole pesanti permettono alla luce di filtrare creando “raggi divini”.</li>
 <li><strong>Vento Dinamico:</strong> I materiali reagiscono in tempo reale al vento, aumentando la vitalità del livello.</li>
 </ul>
 </section>
 <section id="ciclo-giornonotte" class="slide level2">
 <h2>Ciclo Giorno/Notte</h2>
-<p>L’illuminazione non è statica ma è governata da un sistema dinamico.</p>
-<p><em>(Inserisci qui la descrizione tecnica: es. Abbiamo implementato un Blueprint che fa ruotare la Directional Light e aggiorna in tempo reale la Sky Sphere, modificando l’esposizione di Lumen e la temperatura colore della scena passando dall’alba al tramonto fino alla notte.)</em></p>
+<p>L’illuminazione non è statica ma è governata da un sistema tramite il quale si definiscono i periodi di giorno/notte dell’ambiente. Con l’arrivo della notte, tutte le luci col tag “SwitchingLight” vengono accese. L’ambiente è vivo, e reagisce ai cambi di orario</p>
+<p><img data-src="consegna_files/img/DNCycleBegin.png"> <img data-src="consegna_files/img/DNCycleTick.png"></p>
 </section>
 <section id="dettagli-ambientali-illuminazione" class="slide level2">
 <h2>Dettagli Ambientali &amp; Illuminazione</h2>
-<iframe data-external="1" src="https://www.youtube.com/embed/1sr_eN3_2cQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe data-external="1" src="https://www.youtube.com/embed/1sr_eN3_2cQ" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section></section>
 <section>
 <section id="asset-breakdown" class="title-slide slide level1 center">
@@ -260,11 +264,12 @@ Il tuo nome / Nome del Gruppo
 <h2>Provenienza e Tipologia</h2>
 <p>Abbiamo combinato asset ad alta fedeltà per ottimizzare i tempi di produzione:</p>
 <ul>
-<li><strong>Heightmaps:</strong> <a href="https://www.motionforgepictures.com/height-maps/">Motion Forge Pictures - Height Maps realistiche</a></li>
-<li><strong>Megascans e Decorazioni:</strong> <a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Antique Rug</a>, <a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Saloon Interior</a>, <a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration</a></li>
-<li><strong>Strutture ed Esterni (Fab.com):</strong> * <a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest</a>
+<li><p><strong>Heightmaps:</strong> <a href="https://www.motionforgepictures.com/height-maps/">Motion Forge Pictures - Height Maps realistiche</a></p></li>
+<li><p><strong>Megascans e Decorazioni:</strong> <a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Antique Rug</a>, <a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Saloon Interior</a>, <a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration</a></p></li>
+<li><p><strong>Strutture ed Esterni (Fab.com):</strong></p>
 <ul>
-<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></li>
+<li><p><a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest</a></p></li>
+<li><p><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></p></li>
 </ul></li>
 </ul>
 </section>
@@ -277,21 +282,17 @@ Il tuo nome / Nome del Gruppo
 <li><a href="https://youtu.be/4TZG9fBEiR0">UE5 Megaplants - How to Use in PCG</a></li>
 </ol>
 </section></section>
-<section>
-<section id="la-sfida-più-grande" class="title-slide slide level1 center">
-<h1>6. 🔥 La sfida più grande</h1>
-
-</section>
-<section id="what-went-wrong-resolution" class="slide level2">
-<h2>What went wrong &amp; Resolution</h2>
+<section id="le-sfide-maggiori" class="title-slide slide level1 center">
+<h1>6. 🔥 Le sfide maggiori</h1>
 <ul>
 <li><strong>PCG Spline Routing:</strong> Integrare le Spline nel PCG ha richiesto di capire come instradare i dati spaziali e debuggare visivamente i punti di spawn prima della generazione.</li>
 <li><strong>Landscape &amp; Nanite:</strong> Abilitare Nanite sul Landscape ha introdotto sfide prestazionali enormi, risolte scendendo a compromessi e bilanciando i sample del terreno.</li>
-<li><strong>Megaplants Integration:</strong> Questa feature ci ha costretto ad abbandonare i classici “Static Mesh Spawner” nel PCG in favore di un nuovo e complesso sistema di istanziazione.</li>
+<li><strong>Integrazione Megaplants:</strong> Questa feature ci ha costretto ad abbandonare i classici “Static Mesh Spawner” nel PCG in favore di un nuovo e complesso sistema di istanziazione.</li>
 <li><strong>Mie Scattering:</strong> L’illuminazione volumetrica slavava i colori della vegetazione in lontananza. Risolto abbassando la scala del <em>Mie Scattering</em> nei settaggi atmosferici.</li>
+<li><strong>Uniformità negli interni:</strong> La costruzione degli interni è avvenuta impiegando asset provenienti da pack diversi, il che ha portato alla necessità di modificare i materiali per creare coerenza e dare un feel caldo, accogliente e soprattuto coeso alla casa.</li>
 </ul>
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
