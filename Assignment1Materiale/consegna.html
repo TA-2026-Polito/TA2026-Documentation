@@ -9,7 +9,7 @@
 <link href="consegna_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Il tuo nome / Nome del Gruppo">
+  <meta name="author" content="Dario Romano, Federico Colombo / Gruppo 5">
   <title>Technical Post-Mortem: Environment Artist Workflow</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -136,7 +136,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Il tuo nome / Nome del Gruppo 
+Dario Romano, Federico Colombo / Gruppo 5 
 </div>
 </div>
 </div>
@@ -147,6 +147,12 @@ Il tuo nome / Nome del Gruppo
 <h1>1. 🏗️ Panoramica dell’ambiente</h1>
 
 </section>
+<section id="final-showreel" class="slide level2">
+<h2>Final Showreel</h2>
+</section>
+<section id="il-montaggio-finale-che-riassume-lintero-lavoro-di-environment-art-e-latmosfera-della-nostra-scena." class="slide level2">
+<h2><em>Il montaggio finale che riassume l’intero lavoro di Environment Art e l’atmosfera della nostra scena.</em></h2>
+</section>
 <section id="la-scena-e-la-direzione-artistica" class="slide level2">
 <h2>La Scena e la Direzione Artistica</h2>
 <p>L’obiettivo è stato sviluppare un ambiente 3D in Unreal Engine 5. La scena esplora il contrasto tra una vallata naturale con picchi montuosi innevati (exterior) e una zona inferiore ricca di vegetazione con un’architettura rustica (interior).</p>
@@ -155,20 +161,24 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="moodboard-concept-art" class="slide level2">
 <h2>Moodboard &amp; Concept Art</h2>
-<p>La moodboard è stata costruita con immagini di paesaggi montani, prati fioriti e case di campagna, con attenzione alla luce e ai colori. Abbiamo raccolto reference da film, videogiochi e fotografie reali per creare un mix unico.</p>
-<p>🔗 <strong><a href="https://miro.com/app/board/uXjVGxbIRlA=/?share_link_id=457435760422">Guarda la Moodboard completa su Miro</a></strong></p>
+
+<img data-src="consegna_files/img/MiroBoard.png" class="r-stretch"><p>🔗 <strong><a href="https://miro.com/app/board/uXjVGxbIRlA=/?share_link_id=457435760422">Guarda la Moodboard completa su Miro</a></strong></p>
 </section>
 <section id="il-punto-di-partenza-greyboxing" class="slide level2">
 <h2>Il punto di partenza: Greyboxing</h2>
-<p><em>Fase di Blocking per stabilire la scala e le proporzioni della vallata.</em> <iframe data-external="1" src="https://www.youtube.com/embed/j_9f0L7xREE" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<iframe data-external="1" src="https://www.youtube.com/embed/j_9f0L7xREE" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
 <section id="showcase-fiori" class="slide level2">
 <h2>Showcase: Fiori</h2>
-<p><em>Panoramica ravvicinata dell’estetica dei fiori e del Subsurface Scattering.</em> <iframe data-external="1" src="https://www.youtube.com/embed/WnMNuRNU81Y" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<iframe data-external="1" src="https://www.youtube.com/embed/WnMNuRNU81Y" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
-<section id="showcase-la-casa" class="slide level2">
-<h2>Showcase: La Casa</h2>
-<p><em>Visuale dei moduli architettonici immersi nel paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/PXDBmbBSjjk" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<section id="showcase-la-casa-1" class="slide level2">
+<h2>Showcase: La Casa-1</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/Zb07hMzzfUQ" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="showcase-la-casa-2" class="slide level2">
+<h2>Showcase: La Casa-2</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/NLpCD5FACAY" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section></section>
 <section>
 <section id="decisioni-chiave" class="title-slide slide level1 center">
@@ -178,9 +188,9 @@ Il tuo nome / Nome del Gruppo
 <section id="le-scelte-che-hanno-definito-la-scena" class="slide level2 scrollable">
 <h2>Le scelte che hanno definito la scena</h2>
 <ol type="1">
-<li><strong>Clustering Procedurale (Density Noise):</strong> Invece di spargere fiori manualmente, abbiamo generato proceduralmente, tramite PCG, macchie dense di colore intervallate da verde vuoto così da ottenere un forte senso di ordine e direzione artistica.</li>
-<li><strong>Architettura Non-Distruttiva:</strong> L’uso del <em>World Space Texturing</em> per i moduli della casa ha garantito consistenza visiva, eliminando le soluzioni di continuità sui modelli modulari e le UV.</li>
-<li><strong>Estetica via SSS:</strong> Per ottenere l’effetto morbido della flora, abbiamo spinto molto sui materiali con Subsurface Scattering (SSS), permettendo alla luce di trasparire in modo evidente attraverso petali e foglie.</li>
+<li><strong>100% Procedurale e Scalabile:</strong> In un mondo enorme, la scelta radicale è stata quella di non piazzare <em>nessun asset a mano</em>. Tutto è generato proceduralmente (inclusi i materiali e gli asset scatterati) per creare un’oasi viva all’interno di una foresta montana. Questo setup è stato ingegnerizzato per essere facilmente scalabile e riciclabile per le consegne future.</li>
+<li><strong>Controllo tramite Spline:</strong> L’intero layout è governato dalle Spline. Queste delimitano i sentieri, i confini della casa e il perimetro del giardino, dettando al PCG le regole precise di spawn.</li>
+<li><strong>Modularità e Rework degli Interni:</strong> Per gli interni e le strutture, l’approccio è stato rigorosamente modulare. Abbiamo prelevato asset da vari pack e li abbiamo ampiamente reworkati per farli funzionare in modo coeso nella nostra scena.</li>
 </ol>
 </section></section>
 <section>
@@ -196,10 +206,14 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Landscape Auto-Material:</strong> Sviluppato per applicare automaticamente una texture di neve sulle cime (basandosi sull’asse Z e le normali), lasciando la roccia sui pendii ripidi e il terreno fertile a valle.</li>
 </ul>
 </section>
-<section id="landscape-node-graph" class="slide level2">
-<h2>Landscape Node Graph</h2>
+<section id="landscape-node-graph-1" class="slide level2">
+<h2>Landscape Node Graph 1</h2>
 
-<img data-src="images/node_graph_material.png" class="r-stretch quarto-figure-center"><p class="caption">Node Graph dell’Auto-Material</p></section>
+<img data-src="consegna_files/img/LandscapeAutoMat.png" class="r-stretch quarto-figure-center"><p class="caption">Node Graph dell’Auto-Material</p></section>
+<section id="landscape-node-graph-2" class="slide level2">
+<h2>Landscape Node Graph 2</h2>
+
+<img data-src="consegna_files/img/LandscapeAutoMat_2.png" class="r-stretch quarto-figure-center"><p class="caption">Node Graph dell’Auto-Material</p></section>
 <section id="foliage-pcg-spline-workflow" class="slide level2">
 <h2>Foliage, PCG &amp; Spline Workflow</h2>
 <p>L’intera vegetazione è gestita tramite <strong>PCG</strong>, guidato da un rigoroso <strong>Spline Workflow</strong> per tracciare i confini del prato, i sentieri e l’area della casa.</p>
@@ -207,14 +221,14 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Alberi e Megaplants:</strong> I pini sono stati generati usando i nuovi asset <em>Megaplants</em>, integrati nel volume PCG con regole spaziali per limitare lo spawn alle zone di transizione.</li>
 </ul>
 
-<img data-src="images/pcg_spline.png" class="r-stretch quarto-figure-center"><p class="caption">Gerarchia PCG e Spline</p></section>
+<img data-src="consegna_files/img/PCGForestGraph.png" class="r-stretch quarto-figure-center"><p class="caption">Gerarchia PCG e Spline</p></section>
 <section id="showcase-pcg-sentiero-spline" class="slide level2">
 <h2>Showcase PCG: Sentiero Spline</h2>
-<p><em>Dimostrazione di come la Spline modella dinamicamente il sentiero nel terreno.</em> <iframe data-external="1" src="https://www.youtube.com/embed/vFEmwHa85T4" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<iframe data-external="1" src="https://www.youtube.com/embed/vFEmwHa85T4" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
 <section id="showcase-pcg-grass-volume" class="slide level2">
 <h2>Showcase PCG: Grass Volume</h2>
-<p><em>Generazione procedurale dell’erba e integrazione con il paesaggio.</em> <iframe data-external="1" src="https://www.youtube.com/embed/ivKtxmdqfZA" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+<iframe data-external="1" src="https://www.youtube.com/embed/ivKtxmdqfZA" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
 <section id="showcase-pcg-trees-volume" class="slide level2">
 <h2>Showcase PCG: Trees Volume</h2>
@@ -222,7 +236,7 @@ Il tuo nome / Nome del Gruppo
 </section>
 <section id="world-space-texturing" class="slide level2">
 <h2>World Space Texturing</h2>
-<p>I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità</p>
+<p>I moduli della casa presentano delle texture mappate in world space, e non in base alle coordinate UV, così da risultare in un asset consistente e che non presenta nella sua architettura soluzioni di continuità.</p>
 <iframe data-external="1" src="https://www.youtube.com/embed/X4s7fRkRcfg" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section>
 <section id="decals" class="slide level2">
@@ -231,6 +245,14 @@ Il tuo nome / Nome del Gruppo
 <p><img data-src="consegna_files/img/decals01.png"></p>
 <p><img data-src="consegna_files/img/decals02.png"></p>
 <p><img data-src="consegna_files/img/decals03.png"></p>
+</section>
+<section id="celestial-night-and-day-actor" class="slide level2">
+<h2>Celestial Night and Day Actor</h2>
+<p>Per gestire l’illuminazione dinamica e il ciclo vitale del mondo abbiamo implementato il plugin <strong>Celestial Night and Day Actor</strong>. Questo strumento ci ha permesso di creare un ciclo temporale fisicamente accurato, che fa reagire l’intero ambiente (cielo, esposizione, attivazione delle luci) al passare del tempo, automatizzando le transizioni.</p>
+</section>
+<section id="project-cleaner" class="slide level2">
+<h2>Project Cleaner</h2>
+<p>Vista l’enorme quantità di asset scaricati per testare la modularità e le variazioni di props, il peso del progetto rischiava di diventare ingestibile. Abbiamo utilizzato il plugin <strong>Project Cleaner</strong> per individuare ed eliminare tutti gli asset “orfani” (non utilizzati in nessuna mappa), ottimizzando drasticamente lo spazio e mantenendo la repository snella per il controllo versione su Git.</p>
 </section></section>
 <section>
 <section id="breakdown-dellilluminazione" class="title-slide slide level1 center">
@@ -246,13 +268,18 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Vento Dinamico:</strong> I materiali reagiscono in tempo reale al vento, aumentando la vitalità del livello.</li>
 </ul>
 </section>
-<section id="ciclo-giornonotte" class="slide level2">
-<h2>Ciclo Giorno/Notte</h2>
-<p>L’illuminazione non è statica ma è governata da un sistema tramite il quale si definiscono i periodi di giorno/notte dell’ambiente. Con l’arrivo della notte, tutte le luci col tag “SwitchingLight” vengono accese. L’ambiente è vivo, e reagisce ai cambi di orario</p>
-<p><img data-src="consegna_files/img/DNCycleBegin.png"> <img data-src="consegna_files/img/DNCycleTick.png"></p>
+<section id="ciclo-giornonotte-logica" class="slide level2">
+<h2>Ciclo Giorno/Notte (Logica)</h2>
+<p>L’illuminazione non è statica ma è governata da un sistema tramite il quale si definiscono i periodi di giorno/notte dell’ambiente. Con l’arrivo della notte, tutte le luci col tag “SwitchingLight” vengono accese. L’ambiente è vivo, e reagisce ai cambi di orario.</p>
+<p><img data-src="consegna_files/img/DNCycleBegin.png"></p>
+<p><img data-src="consegna_files/img/DNCycleTick.png"></p>
 </section>
-<section id="dettagli-ambientali-illuminazione" class="slide level2">
-<h2>Dettagli Ambientali &amp; Illuminazione</h2>
+<section id="ciclo-giornonotte-visualizzazione" class="slide level2">
+<h2>Ciclo Giorno/Notte: Visualizzazione</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/VovDD3piXcE" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="dettagli-ambientali" class="slide level2">
+<h2>Dettagli Ambientali</h2>
 <iframe data-external="1" src="https://www.youtube.com/embed/1sr_eN3_2cQ" width="100%" height="85%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </section></section>
 <section>
@@ -260,16 +287,25 @@ Il tuo nome / Nome del Gruppo
 <h1>5. 📦 Asset Breakdown</h1>
 
 </section>
+<section id="organizzazione-del-content-browser" class="slide level2">
+<h2>Organizzazione del Content Browser</h2>
+<p>La struttura del progetto riflette l’eterogeneità degli asset integrati, mantenendo una gerarchia pulita per le diverse tipologie di risorse impiegate:</p>
+<ul>
+<li><strong>Terreno e Landscape:</strong> <code>MWLandscapeAutoMaterial</code>, <code>MountainScene</code>.</li>
+<li><strong>Flora e PCG:</strong> <code>Megaplant_Library</code>, <code>Mobile_Trees</code>, <code>HighPoly_Tree_Model</code>, <code>Tree</code>.</li>
+<li><strong>Architettura ed Esterni:</strong> <code>RuralHouse</code>, <code>Scene_Saloon</code>.</li>
+<li><strong>Interni e Props:</strong> <code>Cigar_room</code>, <code>FreeFurniturePack</code>, <code>Megascans</code>, <code>Scarecrow</code>, <code>Street_Lamp</code>, <code>Windmill</code>, <code>Wall_decoration_of_grapes</code>.</li>
+</ul>
+</section>
 <section id="provenienza-e-tipologia" class="slide level2">
 <h2>Provenienza e Tipologia</h2>
 <p>Abbiamo combinato asset ad alta fedeltà per ottimizzare i tempi di produzione:</p>
 <ul>
-<li><p><strong>Heightmaps:</strong> <a href="https://www.motionforgepictures.com/height-maps/">Motion Forge Pictures - Height Maps realistiche</a></p></li>
-<li><p><strong>Megascans e Decorazioni:</strong> <a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Antique Rug</a>, <a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Saloon Interior</a>, <a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration</a></p></li>
-<li><p><strong>Strutture ed Esterni (Fab.com):</strong></p>
+<li><strong>Heightmaps:</strong> <a href="https://www.motionforgepictures.com/height-maps/">Motion Forge Pictures - Height Maps realistiche</a></li>
+<li><strong>Megascans e Decorazioni:</strong> <a href="https://www.fab.com/listings/aac95468-ab2f-4950-964c-45c0bf63068c">Quixel Antique Rug</a>, <a href="https://www.fab.com/listings/57991a62-f98f-4c6a-9b94-a74ec12f242e">Saloon Interior</a>, <a href="https://www.fab.com/listings/43cce1fc-45e1-4c25-ac64-cd95dc577c61">TijerinArt - Wall decoration</a></li>
+<li><strong>Strutture ed Esterni (Fab.com):</strong> * <a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest</a>
 <ul>
-<li><p><a href="https://www.fab.com/listings/a081748c-6a49-4ba4-9008-9b10fadf8f73">Laglanz - Modular Rural House &amp; Pine Forest</a></p></li>
-<li><p><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></p></li>
+<li><a href="https://www.fab.com/listings/4da78da6-44b3-4adf-8883-219fe17b44d4">Hane Studios - Cigar Room Environment</a></li>
 </ul></li>
 </ul>
 </section>
@@ -282,8 +318,13 @@ Il tuo nome / Nome del Gruppo
 <li><a href="https://youtu.be/4TZG9fBEiR0">UE5 Megaplants - How to Use in PCG</a></li>
 </ol>
 </section></section>
+<section>
 <section id="le-sfide-maggiori" class="title-slide slide level1 center">
 <h1>6. 🔥 Le sfide maggiori</h1>
+
+</section>
+<section id="le-criticità-affrontate" class="slide level2">
+<h2>Le criticità affrontate</h2>
 <ul>
 <li><strong>PCG Spline Routing:</strong> Integrare le Spline nel PCG ha richiesto di capire come instradare i dati spaziali e debuggare visivamente i punti di spawn prima della generazione.</li>
 <li><strong>Landscape &amp; Nanite:</strong> Abilitare Nanite sul Landscape ha introdotto sfide prestazionali enormi, risolte scendendo a compromessi e bilanciando i sample del terreno.</li>
@@ -292,7 +333,7 @@ Il tuo nome / Nome del Gruppo
 <li><strong>Uniformità negli interni:</strong> La costruzione degli interni è avvenuta impiegando asset provenienti da pack diversi, il che ha portato alla necessità di modificare i materiali per creare coerenza e dare un feel caldo, accogliente e soprattuto coeso alla casa.</li>
 </ul>
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
