@@ -1,0 +1,24 @@
+---
+title: "Technical Post-Mortem: Assignment 2"
+author: "Dario Romano, Federico Colombo / Gruppo 5"
+format:
+  revealjs: 
+    theme: night
+    slide-number: true
+    smaller: true
+    transition: fade
+    scrollable: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=20mm
+      - bottom=20mm
+      - left=20mm
+      - right=20mm
+---
+# Introduction
+In this technical post-mortem, we will analyze the implementation of the second assignment, which involved creating a simple web application using Flask. The application was designed to allow users to submit their names and receive a personalized greeting. We will discuss the architecture of the application, the challenges faced during development, and the solutions implemented to overcome those challenges.
+# Application Architecture
+The application was structured using the Model-View-Controller (MVC) architecture. The Model represented
