@@ -1,5 +1,5 @@
 ---
-title: "Technical Post-Mortem: Assignment 2 - Character Creation"
+title: "Virtual Humans & Cinematics"
 author: "Dario Romano, Federico Colombo / Gruppo 5"
 format:
   revealjs: 
@@ -31,9 +31,13 @@ format:
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot del video YouTube (Uk1UO-nbqVg) -->
+<!-- Inserire: assets/ref_expedition33.jpg -->
 ![Reference — Expedition 33](consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
 :::
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot di gioco con Gustave e Lune -->
+<!-- Inserire: assets/ref_gustave_lune.jpg -->
 ![Gustave in-game](consegna_files/img/20260421154532_1.jpg){width=100%}
 ![Lune in-game](consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
 
@@ -48,6 +52,8 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot MH editor con il viso in lavorazione -->
+<!-- Inserire: assets/mh_editor_attempt.jpg -->
 ![Lune](consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2015.57.28.jpeg){width=50%}
 ![Gustave](consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2021.07.10.jpeg){width=100%}
 :::
@@ -66,6 +72,8 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 **Workflow:** scan facciale → MH Identity → import in Unreal
 
+<!-- SEGNAPOSTO: schema/diagramma del workflow -->
+<!-- Inserire: assets/workflow_facebuilder.png -->
 ![Workflow FaceBuilder](consegna_files/img/Screenshot%202026-04-21%20170402.png){width=70% fig-align="center"}
 
 ---
@@ -73,6 +81,8 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 ## Tentativo 2 — Risultato
 
 ![](consegna_files/img/WhatsApp%20Image%202026-04-21%20at%2018.01.30.jpeg){width=70% fig-align="center"}
+
+
 
 ---
 
@@ -93,12 +103,34 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ## Soluzione - Metahuman di Dario e Federico
 
+Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri metahuman per farli discutere sul precedente fallimento.
+
 ::: {.columns}
 ::: {.column width="50%"}
 ![Dario](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg)
 :::
 ::: {.column width="50%"}
 ![Federico](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg)
+:::
+:::
+
+---
+
+## MetaHuman Creator Authoring
+
+Documentazione delle scelte effettuate nel Creator per personalizzare i personaggi oltre i preset.
+
+::: {.columns}
+::: {.column width="50%"}
+**Dettagli Tecnici:**
+- **Skin:** Parametri di texture e rugosità.
+- **Eyes:** Configurazione dell'iride e del colore.
+- **Hair:** Scelta dei preset e modifiche ai materiali.
+:::
+::: {.column width="50%"}
+<!-- SEGNAPOSTO: Screenshot MH Creator (Pannelli Skin/Eyes/Hair per dimostrare l'authoring e le modifiche effettuate sui preset) -->
+<!-- Inserire: assets/mh_creator_panels.jpg -->
+![Pannelli MetaHuman Creator](assets/mh_creator_panels.jpg){width=100%}
 :::
 :::
 
@@ -119,7 +151,9 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Capelli importati da asset esterni
 - Clothes importati e fittati
 
-![Federico — MetaHuman Result](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg){width=100%}
+<!-- SEGNAPOSTO: before/after Federico (scan → MH) -->
+<!-- Inserire: assets/fede_scan_vs_mh.jpg o .gif -->
+![Federico — scan → MetaHuman](assets/fede_scan_vs_mh.jpg){width=100%}
 :::
 ::: {.column width="50%"}
 **Dario**
@@ -127,7 +161,9 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Barba e baffi da libreria MH
 - Clothes importati e fittati
 
-![Dario — MetaHuman Result](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg){width=100%}
+<!-- SEGNAPOSTO: before/after Dario (scan → MH) -->
+<!-- Inserire: assets/dario_scan_vs_mh.jpg o .gif -->
+![Dario — scan → MetaHuman](assets/dario_scan_vs_mh.jpg){width=100%}
 :::
 :::
 
@@ -139,13 +175,37 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot del lavoro capelli su Blender (venuto bene) -->
+<!-- Inserire: assets/hair_blender.jpg -->
 ![](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2012.53.02.jpeg){width=100%}
 
 *Il lavoro su Blender era venuto bene...*
 :::
 ::: {.column width="50%"}
-![Esempio di artefatti/difficoltà](consegna_files/img/Screenshot%202026-04-21%20170402.png){width=100%}
+<!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
+<!-- Inserire: assets/hair_import_fail.jpg -->
+![Import in Unreal — problemi](assets/hair_import_fail.jpg){width=100%}
 
-*...ma l'import in Unreal e il matching erano problematici.*
+*...ma l'import in Unreal era un incubo.*
+:::
+:::
+
+---
+
+## IK Rig & Retargeting
+
+Processo di trasferimento delle animazioni catturate sui nostri MetaHuman.
+
+::: {.columns}
+::: {.column width="50%"}
+**Passaggi Tecnici:**
+- Definizione delle **IK Chains** nel rig sorgente e target.
+- Mappatura delle catene.
+- Aggiustamento della **Retarget Pose** per far combaciare le proporzioni.
+:::
+::: {.column width="50%"}
+<!-- SEGNAPOSTO: Screenshot Finestra IK Retargeter in Unreal (mostrando le mesh affiancate e le catene configurate) -->
+<!-- Inserire: assets/ik_retargeter.jpg -->
+![IK Retargeter Setup](assets/ik_retargeter.jpg){width=100%}
 :::
 :::

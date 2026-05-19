@@ -1,5 +1,5 @@
 ---
-title: "Technical Post-Mortem: Assignment 3 - Cinematic Cutscene"
+title: "Virtual Humans & Cinematics"
 author: "Dario Romano, Federico Colombo / Gruppo 5"
 format:
   revealjs: 
@@ -28,6 +28,8 @@ format:
 ## L'idea: la Gag
 
 **Ispirazione:** la lezione del professore sul *Post Mortem*.
+
+> E se mettessimo noi stessi in scena, a discutere del MetaHuman venuto male?
 
 **Concept:** Fede e Dario attorno a un tavolo operatorio, con Gustave-patient-zero sdraiato.
 
@@ -65,10 +67,34 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot dell'ambiente in Unreal -->
+<!-- Inserire: assets/environment_overview.jpg -->
 ![Ambiente — vista generale](consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
 :::
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: screenshot interno della casa -->
+<!-- Inserire: assets/environment_interior.jpg -->
 ![Interno casa](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+:::
+:::
+
+---
+
+## Struttura del Sequencer
+
+Organizzazione multidipartimentale del lavoro tramite la gerarchia del Sequencer.
+
+::: {.columns}
+::: {.column width="50%"}
+**Workflow adottato:**
+- **MasterSequence:** Per la gestione dei Camera Cuts e l'editing globale.
+- **SequenceShots:** Per l'isolamento e la lavorazione delle singole inquadrature.
+- **SubSequence Lighting:** Per tenere la configurazione delle luci separata dalle animazioni.
+:::
+::: {.column width="50%"}
+<!-- SEGNAPOSTO: Screenshot della timeline del Sequencer che mostri la MasterSequence, gli Shot e la traccia SubSequences per il Lighting -->
+<!-- Inserire: assets/master_sequence_structure.jpg -->
+![Struttura Sequencer](assets/master_sequence_structure.jpg){width=100%}
 :::
 :::
 
@@ -84,7 +110,11 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 | Quickmagic | Qualità dell'output | Solo i primi 30', sistema a crediti |
 | RADiCAL | Qualità dell'output | Solo i primi 20', sistema a crediti |
 
-Abbiamo optato per Cartwheel.
+
+<!-- SEGNAPOSTO: tabella comparativa degli strumenti valutati -->
+<!-- Se avete screenshot/note di confronto, aggiungere qui -->
+
+Abbiamo quindi optato per utilizzare Cartwheel
 
 ---
 
@@ -96,9 +126,13 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
+<!-- Inserire: assets/livelink_capture.jpg -->
 ![Live action](consegna_files/vid/IMG_7567_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
+<!-- Inserire: assets/livelink_result.gif -->
 ![Risultato](consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4){width=100%}
 :::
 :::
@@ -113,9 +147,13 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
+<!-- Inserire: assets/livelink_capture.jpg -->
 ![Live action](consegna_files/vid/IMG_7573_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
+<!-- Inserire: assets/livelink_result.gif -->
 ![Risultato](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4){width=100%}
 :::
 :::
@@ -124,7 +162,7 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ## Correzioni alle Animazioni — Additive Track
 
-Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer.
+Il risultato grezzo di Cartwheel richiedeva correzioni manuale nel Sequencer.
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -135,9 +173,15 @@ Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer.
 - Ancoraggio **piedi a terra** (entrambe le riprese zenitali)
 :::
 ::: {.column width="50%"}
-![Ambiente di lavoro](consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
+<!-- SEGNAPOSTO: screenshot del Sequencer con le additive track visibili sui personaggi -->
+<!-- Inserire: assets/sequencer_additive.jpg -->
+![Sequencer — Additive Track](assets/sequencer_additive.jpg){width=100%}
 :::
 :::
+
+<!-- SEGNAPOSTO: GIF comparativa prima/dopo correzione -->
+<!-- Inserire: assets/anim_correction_comparison.gif -->
+![Prima / Dopo correzione](assets/anim_correction_comparison.gif){width=70% fig-align="center"}
 
 ---
 
@@ -151,19 +195,25 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
+<!-- Inserire: assets/livelink_capture.jpg -->
 ![Mocap Facciale Dario](consegna_files/vid/20260503-0922-52.2157201_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
+<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
+<!-- Inserire: assets/livelink_result.gif -->
 ![Mocap Facciale Federico](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4){width=100%}
 :::
 :::
 
 ---
 
-## Le Inquadrature — Camera Cuts
+## Le Inquadrature — Camera Cuts e CineCamera
 
 Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 
+::: {.columns}
+::: {.column width="50%"}
 | # | Inquadratura | Focale | Motivazione |
 |---|-------------|--------|-------------|
 | 1 | Totale sulla casa | **200mm** | Taglio familiare e accogliente |
@@ -171,7 +221,16 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 | 3 | Su Dario | **30mm** | Dialogo |
 | 4 | Su Federico | **30mm** | Dialogo |
 | 5 | Dettaglio naso Gustave | **85mm** | Close-up di qualità |
+:::
+::: {.column width="50%"}
+<!-- SEGNAPOSTO: Screenshot Pannello Details CineCamera (per mostrare le impostazioni di Focal Length, Aperture e Focus) -->
+<!-- Inserire: assets/cinecamera_details.jpg -->
+![CineCamera Details](assets/cinecamera_details.jpg){width=100%}
+:::
+:::
 
+<!-- SEGNAPOSTO: grid con screenshot delle 5 camere in Unreal -->
+<!-- Inserire: assets/cameras_grid.jpg (montaggio 5 screenshot) -->
 1 -> 2 -> 3 -> 4 -> 5 -> 2
 
 ---
@@ -183,16 +242,45 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 ::: {.columns}
 ::: {.column width="40%"}
 **Key light**
-Rect Light dalla finestra
+Rect Light che potenzia la luce proveniente dalla finestra della casa
 
 **Fill light**
-Ray tracing ambientale
+Ray tracing ambientale (fornito dall'ambiente e dall'engine)
 
 **Rim light**
-Due Rect Light dietro ai personaggi
+Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="60%"}
-![Risultato Ambiente](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+<!-- SEGNAPOSTO: schema di illuminazione (disegno o screenshot "dietro le quinte" con le icone delle luci visibili nel viewport) -->
+<!-- Inserire: assets/lighting_schema.jpg -->
+![Schema luci](assets/lighting_schema.jpg){width=100%}
+
+<!-- SEGNAPOSTO: screenshot del risultato illuminato finale -->
+<!-- Inserire: assets/lighting_result.jpg -->
+![Risultato illuminazione](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+:::
+:::
+
+---
+
+## Sound Design
+
+::: {.columns}
+::: {.column width="50%"}
+**Tracce audio:**
+
+- 🌬️ **Vento** — establishing shot (esterno)
+- 🐦 **Cinguettii** — establishing shot (esterno)
+- 📉 **Fade** del volume nel passaggio esterno → interno
+
+<!-- SEGNAPOSTO: screenshot del Sequencer con le tracce audio -->
+<!-- Inserire: assets/sequencer_audio.jpg -->
+![Sequencer — tracce audio](assets/sequencer_audio.jpg){width=100%}
+:::
+::: {.column width="50%"}
+<!-- SEGNAPOSTO: waveform o timeline audio se disponibile -->
+<!-- Inserire: assets/audio_waveform.jpg -->
+![Audio timeline](assets/audio_waveform.jpg){width=100%}
 :::
 :::
 
@@ -200,8 +288,11 @@ Due Rect Light dietro ai personaggi
 
 ## Risultato Finale
 
+<!-- SEGNAPOSTO: video embed della cutscene completa (sostituire col file locale exportato in Movie Render Queue) -->
 {{< video consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4 width="100%" >}}
 
+<!-- SEGNAPOSTO: screenshot still della scena finale come fallback -->
+<!-- Inserire: assets/final_still.jpg -->
 ![Still dalla cutscene finale](consegna_files/img/Screenshot%202026-05-03%20112239.png){width=80% fig-align="center"}
 
 ---
@@ -231,3 +322,6 @@ Due Rect Light dietro ai personaggi
 # Grazie per l'attenzione!
 
 *Federico & Dario*
+
+<!-- SEGNAPOSTO: immagine finale iconica / frame della scena -->
+<!-- Inserire: assets/final_frame.jpg -->

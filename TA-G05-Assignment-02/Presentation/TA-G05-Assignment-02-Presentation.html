@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="presentation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="presentation_files/libs/quarto-html/tabby.min.js"></script>
-<script src="presentation_files/libs/quarto-html/popper.min.js"></script>
-<script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="presentation_files/libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="presentation_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
+<script src="TA-G05-Assignment-02-Presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="TA-G05-Assignment-02-Presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Dario Romano, Federico Colombo / Gruppo 5">
-  <title>Virtual Humans &amp; Cinematics</title>
+  <title>Technical Post-Mortem: Assignment 2 - Character Creation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/dist/reveal.css">
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,11 +32,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-422092a5e00d6ffa3175d97bbb8f7ab9.css">
-  <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/dist/theme/quarto-422092a5e00d6ffa3175d97bbb8f7ab9.css">
+  <link href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -133,7 +131,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Virtual Humans &amp; Cinematics</h1>
+  <h1 class="title">Technical Post-Mortem: Assignment 2 - Character Creation</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -156,12 +154,12 @@ Dario Romano, Federico Colombo / Gruppo 5
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg" style="width:100.0%"></p>
+<p><img data-src="consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg" style="width:100.0%"></p>
 <figcaption>Reference — Expedition 33</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/20260421154532_1.jpg" style="width:100.0%" alt="Gustave in-game"> <img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg" style="width:100.0%" alt="Lune in-game"></p>
+<p><img data-src="consegna_files/img/20260421154532_1.jpg" style="width:100.0%" alt="Gustave in-game"> <img data-src="consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg" style="width:100.0%" alt="Lune in-game"></p>
 </div></div>
 </section>
 <section id="tentativo-1-metahuman-editor-diretto" class="slide level2">
@@ -169,7 +167,7 @@ Dario Romano, Federico Colombo / Gruppo 5
 <p>Partire dalle <strong>mesh base di MH</strong> e “copiare” il volto a occhio.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2015.57.28.jpeg" style="width:50.0%" alt="Lune"> <img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2021.07.10.jpeg" style="width:100.0%" alt="Gustave"></p>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2015.57.28.jpeg" style="width:50.0%" alt="Lune"> <img data-src="consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2021.07.10.jpeg" style="width:100.0%" alt="Gustave"></p>
 </div><div class="column" style="width:50%;">
 <p><strong>Problemi riscontrati:</strong></p>
 <ul>
@@ -183,19 +181,38 @@ Dario Romano, Federico Colombo / Gruppo 5
 <h2>Tentativo 2 — FaceBuilder su Blender</h2>
 <p><strong>Workflow:</strong> scan facciale → MH Identity → import in Unreal</p>
 
-<img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/Screenshot%202026-04-21%20170402.png" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Workflow FaceBuilder</p></section>
+<img data-src="consegna_files/img/Screenshot%202026-04-21%20170402.png" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Workflow FaceBuilder</p></section>
 <section id="tentativo-2-risultato" class="slide level2">
 <h2>Tentativo 2 — Risultato</h2>
 
-<img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/WhatsApp%20Image%202026-04-21%20at%2018.01.30.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<img data-src="consegna_files/img/WhatsApp%20Image%202026-04-21%20at%2018.01.30.jpeg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
 <section id="soluzione---metahuman-di-dario-e-federico" class="slide level2">
 <h2>Soluzione - Metahuman di Dario e Federico</h2>
 <p>Si porta il concetto di “post mortem” all’estremo: abbiamo realizzato i nostri metahuman per farli discutere sul precedente fallimento.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/Screenshot%202026-04-24%20183625.png"></p>
+<p><img data-src="consegna_files/img/Screenshot%202026-04-24%20183625.png"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2010.47.59.jpeg"></p>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2010.47.59.jpeg"></p>
+</div></div>
+</section>
+<section id="soluzione---metahuman-di-dario-e-federico-1" class="slide level2">
+<h2>Soluzione - Metahuman di Dario e Federico</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg"></p>
+<figcaption>Dario</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg"></p>
+<figcaption>Federico</figcaption>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="metahuman-creator-authoring" class="slide level2">
@@ -210,6 +227,37 @@ Dario Romano, Federico Colombo / Gruppo 5
 <figure>
 <p><img data-src="placeholder_mh_panels.jpg" style="width:100.0%"></p>
 <figcaption>[Manca: Screenshot MH Creator Panels]</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="character-creation-workflow" class="slide level2">
+<h2>Character Creation Workflow</h2>
+<pre><code>Video selfie rotante  →  Reality Scan  →  Scan pulito
+      →  MH Identity  →  MetaHuman base  →  Vestiti + capelli</code></pre>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Federico</strong></p>
+<ul>
+<li>Capelli importati da asset esterni</li>
+<li>Clothes importati e fittati</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg" style="width:100.0%"></p>
+<figcaption>Federico — MetaHuman Result</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><strong>Dario</strong></p>
+<ul>
+<li>Barba e baffi da libreria MH</li>
+<li>Clothes importati e fittati</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg" style="width:100.0%"></p>
+<figcaption>Dario — MetaHuman Result</figcaption>
 </figure>
 </div>
 </div></div>
@@ -235,292 +283,28 @@ Dario Romano, Federico Colombo / Gruppo 5
 <p><strong>Tentativo:</strong> Blender → Alembic → Groom Asset in Unreal</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2012.53.02.jpeg" style="width:100.0%"></p>
+<p><img data-src="consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2012.53.02.jpeg" style="width:100.0%"></p>
 <p><em>Il lavoro su Blender era venuto bene…</em></p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="TA-G05-Assignment-02/Presentation/consegna_files/img/Screenshot%202026-04-21%20170402.png" style="width:100.0%"></p>
+<p><img data-src="consegna_files/img/Screenshot%202026-04-21%20170402.png" style="width:100.0%"></p>
 <figcaption>Esempio di artefatti/difficoltà</figcaption>
 </figure>
 </div>
 <p><em>…ma l’import in Unreal e il matching erano problematici.</em></p>
 </div></div>
-</section></section>
-<section>
-<section id="assignment-3" class="title-slide slide level1 center">
-<h1>ASSIGNMENT 3</h1>
-<p><em>Realizzazione di una cutscene</em></p>
 </section>
-<section id="lidea-la-gag" class="slide level2">
-<h2>L’idea: la Gag</h2>
-<p><strong>Ispirazione:</strong> la lezione del professore sul <em>Post Mortem</em>.</p>
-<p><strong>Concept:</strong> Fede e Dario attorno a un tavolo operatorio, con Gustave-patient-zero sdraiato.</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<pre><code>Zenitale sul tavolo, push in sul metahuman sdraiato.
-
-Dario: "Ma come ti è venuto in mente di partire da Blender
-        per poi passare su Unreal e pensare che venisse una cosa decente?"
-
-Fede:  "Vabè almeno ci ho provato, non è che possiamo fare
-        le cose giuste al primo tentativo"
-
-Dario: "Ho capito ma ti rendi conto di quello che ho dovuto fare
-        per farlo sembrare un minimo accettabile?"
-
-Fede:  "Eh sì che lo vedo, guarda quel naso lì, e poi manco hai
-        cambiato il preset di base di metahuman"
-
-Dario: "Magari con una mesh decente di partenza avrei avuto
-        anche più voglia di farlo giusto"</code></pre>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="TA-G05-Assignment-03/Presentation/consegna_files/img/photo_2026-05-14_12-53-17.jpg"></p>
-<figcaption>Storyboad</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="lambiente" class="slide level2">
-<h2>L’ambiente</h2>
-<p>Location creata per la prima consegna. Verrà riutilizzata invariata.</p>
+<section id="risorse-consigliate" class="slide level2">
+<h2>Risorse Consigliate</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="TA-G05-Assignment-03/Presentation/consegna_files/img/Screenshot%202026-03-25%20225944.png" style="width:100.0%"></p>
-<figcaption>Ambiente — vista generale</figcaption>
-</figure>
-</div>
+<p><strong>Risorsa 1</strong> [Titolo/Link] Perché è stata utile.</p>
 </div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="TA-G05-Assignment-03/Presentation/consegna_files/img/Screenshot%202026-04-10%20194540.png" style="width:100.0%"></p>
-<figcaption>Interno casa</figcaption>
-</figure>
-</div>
+<p><strong>Risorsa 2</strong> [Titolo/Link] Perché è stata utile.</p>
 </div></div>
-</section>
-<section id="struttura-del-sequencer" class="slide level2">
-<h2>Struttura del Sequencer</h2>
-<p>Workflow di lavoro multidipartimentale tramite MasterSequence e SubSequences.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Organizzazione:</strong> - <strong>MasterSequence:</strong> Gestione dei Camera Cuts. - <strong>SequenceShots:</strong> Inquadrature individuali. - <strong>SubSequence Lighting:</strong> Gestione luci isolata.</p>
-</div><div class="column" style="width:50%;">
-<!-- PLACEHOLDER: Screenshot Timeline Sequencer (Master + SubSequences) -->
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="placeholder_sequencer.jpg" style="width:100.0%"></p>
-<figcaption>[Manca: Screenshot Timeline Sequencer]</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="body-mocap-cartwheel" class="slide level2">
-<h2>Body Mocap — Cartwheel</h2>
-<p><strong>Valutazione strumenti IA</strong> per il mocap del corpo:</p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 20%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Strumento</th>
-<th>Pro</th>
-<th>Contro</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Cartwheel</td>
-<td>Qualità output, workflow pulito</td>
-<td>Solo 30’, ma arbitrari</td>
-</tr>
-<tr class="even">
-<td>Quickmagic</td>
-<td>Qualità dell’output</td>
-<td>Solo i primi 30’, sistema a crediti</td>
-</tr>
-<tr class="odd">
-<td>RADiCAL</td>
-<td>Qualità dell’output</td>
-<td>Solo i primi 20’, sistema a crediti</td>
-</tr>
-</tbody>
-</table>
-<p>Abbiamo optato per Cartwheel.</p>
-</section>
-<section id="body-mocap-grezzo-dario---risultato" class="slide level2">
-<h2>Body Mocap Grezzo (Dario) - Risultato</h2>
-<pre><code>Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH</code></pre>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/IMG_7567_compressed.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/IMG_7567_compressed.mp4">Video</a></video></p>
-<figcaption>Live action</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4">Video</a></video></p>
-<figcaption>Risultato</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="body-mocap-grezzo-federico--risultato" class="slide level2">
-<h2>Body Mocap Grezzo (Federico)- Risultato</h2>
-<pre><code>Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH</code></pre>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/IMG_7573_compressed.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/IMG_7573_compressed.mp4">Video</a></video></p>
-<figcaption>Live action</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4">Video</a></video></p>
-<figcaption>Risultato</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="correzioni-alle-animazioni-additive-track" class="slide level2">
-<h2>Correzioni alle Animazioni — Additive Track</h2>
-<p>Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer tramite <strong>Additive Tracks</strong>.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Interventi:</strong> - Correzione posizione <strong>dita e mani</strong>. - Rotazione e focus degli <strong>occhi</strong>. - Ancoraggio dei <strong>piedi</strong> per evitare scivolamenti.</p>
-</div><div class="column" style="width:50%;">
-<!-- PLACEHOLDER: Screenshot Sequencer con Additive Tracks visibili -->
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="placeholder_additive.jpg" style="width:100.0%"></p>
-<figcaption>[Manca: Screenshot Additive Tracks]</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="face-mocap-live-link" class="slide level2">
-<h2>Face Mocap — Live Link</h2>
-<p><strong>Workflow:</strong></p>
-<pre><code>Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH</code></pre>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/20260503-0922-52.2157201_compressed.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/20260503-0922-52.2157201_compressed.mp4">Video</a></video></p>
-<figcaption>Mocap Facciale Dario</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><video data-src="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26.mp4" style="width:100.0%" controls=""><a href="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26.mp4">Video</a></video></p>
-<figcaption>Mocap Facciale Federico</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="le-inquadrature-cinecamera-details" class="slide level2">
-<h2>Le Inquadrature — CineCamera Details</h2>
-<p>Analisi tecnica delle camere utilizzate.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Inquadratura</th>
-<th>Focale</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Totale esterno</td>
-<td><strong>200mm</strong></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Zenitale tavolo</td>
-<td><strong>30mm</strong></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Close-up Dario</td>
-<td><strong>30mm</strong></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Close-up Fede</td>
-<td><strong>30mm</strong></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Dettaglio Gustave</td>
-<td><strong>85mm</strong></td>
-</tr>
-</tbody>
-</table>
-</div><div class="column" style="width:50%;">
-<!-- PLACEHOLDER: Screenshot Panel Details di una CineCamera (Focal/Aperture) -->
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="placeholder_camera_details.jpg" style="width:100.0%"></p>
-<figcaption>[Manca: Screenshot CineCamera Details]</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="illuminazione-three-point-lighting" class="slide level2">
-<h2>Illuminazione (Three-Point Lighting)</h2>
-<p>Setup luci per valorizzare i personaggi e staccarli dallo sfondo.</p>
-<div class="columns">
-<div class="column" style="width:40%;">
-<p><strong>Key:</strong> Rect Light dalla finestra. <strong>Fill:</strong> Ray tracing ambientale. <strong>Rim:</strong> Due Rect Light posteriori.</p>
-</div><div class="column" style="width:60%;">
-<!-- PLACEHOLDER: Screenshot "dietro le quinte" con icone luci visibili -->
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="placeholder_lighting_setup.jpg" style="width:100.0%"></p>
-<figcaption>[Manca: Screenshot Setup Luci (Icons)]</figcaption>
-</figure>
-</div>
-</div></div>
-</section>
-<section id="risultato-finale" class="slide level2">
-<h2>Risultato Finale</h2>
-<video id="video_shortcode_videojs_video1" width="100%" class="video-js vjs-default-skin vjs-big-play-centered " controls="" preload="auto" data-setup="{}" title=""><source src="TA-G05-Assignment-03/Presentation/consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4"></video>
-
-<img data-src="TA-G05-Assignment-03/Presentation/consegna_files/img/Screenshot%202026-05-03%20112239.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Still dalla cutscene finale</p></section>
-<section id="lessons-learned" class="slide level2">
-<h2>Lessons Learned</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Cosa ha funzionato ✅</strong> - Workflow Reality Scan → MH Identity. - Live Link per face mocap. - Il pivot creativo del “Post Mortem”.</p>
-</div><div class="column" style="width:50%;">
-<p><strong>Cosa non ha funzionato ❌</strong> - MH Editor diretto per somiglianza. - Blender hair → Groom Asset. - Tempo eccessivo su correzioni manuali.</p>
-</div></div>
-</section>
-<section class="slide level2">
 
 </section></section>
-<section id="grazie-per-lattenzione" class="title-slide slide level1 center">
-<h1>Grazie per l’attenzione!</h1>
-<p><em>Federico &amp; Dario</em></p>
-
-</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -529,19 +313,19 @@ Dario: "Magari con una mesh decente di partenza avrei avuto
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="presentation_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="presentation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="TA-G05-Assignment-02-Presentation_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -904,7 +688,6 @@ Dario: "Magari con una mesh decente di partenza avrei avuto
         }
       });
       </script>
-    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>
