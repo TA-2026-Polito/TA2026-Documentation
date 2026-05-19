@@ -21,7 +21,7 @@ format:
 
 # ASSIGNMENT 2 
 
-*Ascesa, declino e rinascita di un'idea*
+*Ascesa, declino e rinascita di un Metahuman*
 
 ---
 
@@ -32,7 +32,7 @@ format:
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del video YouTube (Uk1UO-nbqVg) -->
-![Reference — Expedition 33](TA-G05-Assignment-02/Presentation/consegna_files/img/lune.jpg){width=100%}
+![Reference — Expedition 33](TA-G05-Assignment-02/Presentation/consegna_files/vid/expedition_referencevideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot di gioco con Gustave e Lune -->
@@ -52,7 +52,7 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot MH editor con il viso in lavorazione -->
 ![Lune](TA-G05-Assignment-02/Presentation/consegna_files/img/luneMHtrial.jpeg){width=50%}
-![Gustave](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveScanTrial.jpeg){width=100%}
+![Gustave](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveComparison.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Problemi riscontrati:**
@@ -67,18 +67,10 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 ## Tentativo 2 — FaceBuilder su Blender
 
-**Workflow:** scan facciale → MH Identity → import in Unreal
+**Workflow:** scan reference → MH Identity → import in Unreal
 
 <!-- SEGNAPOSTO: schema/diagramma del workflow -->
-![Workflow FaceBuilder](TA-G05-Assignment-02/Presentation/consegna_files/img/gustave_facebuilder.png){width=70% fig-align="center"}
-
----
-
-## Tentativo 2 — Risultato
-
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveComparison.jpeg){width=70% fig-align="center"}
-
-
+![Workflow FaceBuilder](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveScanTrial.jpeg){width=70% fig-align="center"}
 
 ---
 
@@ -88,10 +80,10 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ::: {.columns}
 ::: {.column width="50%"}
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_MH.jpeg)
+![](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_scanRC.png)
 :::
 ::: {.column width="50%"}
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeMH.jpeg)
+![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeScan.jpeg)
 :::
 :::
 
@@ -112,31 +104,11 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ---
 
-## MetaHuman Creator Authoring
-
-Documentazione delle scelte effettuate nel Creator per personalizzare i personaggi oltre i preset.
-
-::: {.columns}
-::: {.column width="50%"}
-**Dettagli Tecnici:**
-- **Skin:** Parametri di texture e rugosità.
-- **Eyes:** Configurazione dell'iride e del colore.
-- **Hair:** Scelta dei preset e modifiche ai materiali.
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot MH Creator -->
-![Pannelli MetaHuman Creator](TA-G05-Assignment-02/Presentation/consegna_files/img/fede_frontview.png){width=100%}
-:::
-:::
-
----
-
 ## Character Creation Workflow
 
 
 ```
-Video selfie rotante  →  Reality Scan  →  Scan pulito
-      →  MH Identity  →  MetaHuman base  →  Vestiti + capelli
+Video selfie rotante → Reality Scan → Scan pulito → MH Identity → MetaHuman base → Vestiti + capelli
 ```
 
 ::: {.columns}
@@ -146,8 +118,6 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Capelli importati da asset esterni
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Federico (scan → MH) -->
-![Federico — scan → MetaHuman](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeScan.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Dario**
@@ -155,8 +125,6 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Barba e baffi da libreria MH
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Dario (scan → MH) -->
-![Dario — scan → MetaHuman](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_scanRC.png){width=100%}
 :::
 :::
 
@@ -175,27 +143,9 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
-![Import in Unreal — problemi](TA-G05-Assignment-02/Presentation/consegna_files/img/fede_clothedBugged.png){width=100%}
+![Import in Unreal — problemi](TA-G05-Assignment-02/Presentation/consegna_files/img/FOTO_CAPELLI_BUGGATI.png){width=100%}
 
 *...ma l'import in Unreal era un incubo.*
-:::
-:::
-
----
-
-## IK Rig & Retargeting
-
-Processo di trasferimento delle animazioni catturate sui nostri MetaHuman.
-
-::: {.columns}
-::: {.column width="50%"}
-**Passaggi Tecnici:**
-- Definizione delle **IK Chains** nel rig sorgente e target.
-- Mappatura delle catene.
-- Aggiustamento della **Retarget Pose** per far combaciare le proporzioni.
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot Finestra IK Retargeter in Unreal -->
 :::
 :::
 
@@ -215,8 +165,6 @@ Processo di trasferimento delle animazioni catturate sui nostri MetaHuman.
 ### **Criticità e Problemi ❌**
 - **Uncanny Valley:** l'editing manuale a occhio non regge il confronto.
 - **Blender Groom Asset:** pipeline Alembic instabile in Unreal.
-- **IK Retargeting:** distorsioni complesse su vestiti custom.
-- **Optimization:** gestione dei LOD con asset esterni importati.
 :::
 :::
 
@@ -285,17 +233,12 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 
 Organizzazione multidipartimentale del lavoro tramite la gerarchia del Sequencer.
 
-::: {.columns}
-::: {.column width="50%"}
+
 **Workflow adottato:**
 - **MasterSequence:** Per la gestione dei Camera Cuts e l'editing globale.
-- **SequenceShots:** Per l'isolamento e la lavorazione delle singole inquadrature.
-- **SubSequence Lighting:** Per tenere la configurazione delle luci separata dalle animazioni.
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot della timeline del Sequencer -->
-:::
-:::
+- **Camera cuts:** Per l'isolamento e la lavorazione delle singole inquadrature.
+- **SubSequence:** Ognuno dei due MetaHuman presenta la propria sottosequenza così che i due persoanggi avessero animazioni autonome.
+
 
 ---
 
@@ -325,7 +268,7 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/dario_acting.mp4){width=100%}
+![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Dario.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
@@ -344,7 +287,7 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/fede_acting.mp4){width=100%}
+![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Fede.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
@@ -398,8 +341,6 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 
 Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 
-::: {.columns}
-::: {.column width="50%"}
 | # | Inquadratura | Focale | Motivazione |
 |---|-------------|--------|-------------|
 | 1 | Totale sulla casa | **200mm** | Taglio familiare e accogliente |
@@ -407,14 +348,10 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 | 3 | Su Dario | **30mm** | Dialogo |
 | 4 | Su Federico | **30mm** | Dialogo |
 | 5 | Dettaglio naso Gustave | **85mm** | Close-up di qualità |
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot Pannello Details CineCamera -->
-:::
-:::
+
 
 <!-- SEGNAPOSTO: grid con screenshot delle 5 camere in Unreal -->
-1 -> 2 -> 3 -> 4 -> 5 -> 2
+Sequenza delle camere: 1 → 2 → 3 → 4 → 5 → 2
 
 ---
 
@@ -435,10 +372,8 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="60%"}
 <!-- SEGNAPOSTO: schema di illuminazione -->
-![Schema luci](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=100%}
+![Schema luci](TA-G05-Assignment-03/Presentation/consegna_files/img/light_placement.png){width=100%}
 
-<!-- SEGNAPOSTO: screenshot del risultato illuminato finale -->
-![Risultato illuminazione](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=100%}
 :::
 :::
 
@@ -448,8 +383,6 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 
 <!-- SEGNAPOSTO: video embed della cutscene completa -->
 {{< video TA-G05-Assignment-03/Presentation/consegna_files/vid/sceneacting_unlit.mp4 width="100%" >}}
-
-![Still dalla cutscene finale](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=80% fig-align="center"}
 
 ---
 
@@ -465,10 +398,8 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="50%"}
 ### **Criticità e Problemi ❌**
-- **Focus & DOF:** gestione manuale complessa negli shot in movimento.
-- **Mocap Sync:** disallineamento temporale tra body e face capture.
+- **Mocap Sync:** disallineamento temporale tra body e face capture da gestire.
 - **Foot Anchoring:** scivolamenti residui nelle inquadrature zenitali.
-- **Scene Complexity:** gestione dei pesi delle animazioni multiple.
 :::
 :::
 
@@ -477,5 +408,3 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 # Grazie per l'attenzione!
 
 *Federico & Dario*
-
-![Frame Finale](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=80% fig-align="center"}
