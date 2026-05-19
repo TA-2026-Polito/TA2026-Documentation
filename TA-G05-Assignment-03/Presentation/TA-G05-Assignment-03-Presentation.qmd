@@ -55,7 +55,7 @@ Dario: "Magari con una mesh decente di partenza avrei avuto
 ```
 :::
 ::: {.column width="40%"}
-![Storyboad](consegna_files/img/photo_2026-05-14_12-53-17.jpg)
+![Storyboard](consegna_files/img/storyboard.jpg)
 :::
 :::
 
@@ -69,12 +69,12 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot dell'ambiente in Unreal -->
 <!-- Inserire: assets/environment_overview.jpg -->
-![Ambiente — vista generale](consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
+![Ambiente — vista generale](consegna_files/img/ambient.png){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot interno della casa -->
 <!-- Inserire: assets/environment_interior.jpg -->
-![Interno casa](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+![Interno casa](consegna_files/img/intern_lighting.png){width=100%}
 :::
 :::
 
@@ -128,12 +128,12 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
 <!-- Inserire: assets/livelink_capture.jpg -->
-![Live action](consegna_files/vid/IMG_7567_compressed.mp4){width=100%}
+![Live action](consegna_files/vid/dario_acting.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
 <!-- Inserire: assets/livelink_result.gif -->
-![Risultato](consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4){width=100%}
+![Risultato](consegna_files/vid/darioMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -149,12 +149,12 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
 <!-- Inserire: assets/livelink_capture.jpg -->
-![Live action](consegna_files/vid/IMG_7573_compressed.mp4){width=100%}
+![Live action](consegna_files/vid/fede_acting.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
 <!-- Inserire: assets/livelink_result.gif -->
-![Risultato](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4){width=100%}
+![Risultato](consegna_files/vid/fedeMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -197,12 +197,12 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
 <!-- Inserire: assets/livelink_capture.jpg -->
-![Mocap Facciale Dario](consegna_files/vid/20260503-0922-52.2157201_compressed.mp4){width=100%}
+![Mocap Facciale Dario](consegna_files/vid/dario_faceactingvideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
 <!-- Inserire: assets/livelink_result.gif -->
-![Mocap Facciale Federico](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4){width=100%}
+![Mocap Facciale Federico](consegna_files/vid/fede_faceacting.mp4){width=100%}
 :::
 :::
 
@@ -253,67 +253,43 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 ::: {.column width="60%"}
 <!-- SEGNAPOSTO: schema di illuminazione (disegno o screenshot "dietro le quinte" con le icone delle luci visibili nel viewport) -->
 <!-- Inserire: assets/lighting_schema.jpg -->
-![Schema luci](assets/lighting_schema.jpg){width=100%}
+![Schema luci](consegna_files/img/intern_lighting.png){width=100%}
 
-<!-- SEGNAPOSTO: screenshot del risultato illuminato finale -->
-<!-- Inserire: assets/lighting_result.jpg -->
-![Risultato illuminazione](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+
+
 :::
 :::
 
 ---
 
-## Sound Design
 
-::: {.columns}
-::: {.column width="50%"}
-**Tracce audio:**
-
-- 🌬️ **Vento** — establishing shot (esterno)
-- 🐦 **Cinguettii** — establishing shot (esterno)
-- 📉 **Fade** del volume nel passaggio esterno → interno
-
-<!-- SEGNAPOSTO: screenshot del Sequencer con le tracce audio -->
-<!-- Inserire: assets/sequencer_audio.jpg -->
-![Sequencer — tracce audio](assets/sequencer_audio.jpg){width=100%}
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: waveform o timeline audio se disponibile -->
-<!-- Inserire: assets/audio_waveform.jpg -->
-![Audio timeline](assets/audio_waveform.jpg){width=100%}
-:::
-:::
-
----
 
 ## Risultato Finale
 
-<!-- SEGNAPOSTO: video embed della cutscene completa (sostituire col file locale exportato in Movie Render Queue) -->
-{{< video consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4 width="100%" >}}
+
 
 <!-- SEGNAPOSTO: screenshot still della scena finale come fallback -->
 <!-- Inserire: assets/final_still.jpg -->
-![Still dalla cutscene finale](consegna_files/img/Screenshot%202026-05-03%20112239.png){width=80% fig-align="center"}
+![Video Finale](consegna_files/img/intern_lighting.png){width=80% fig-align="center"}
 
 ---
 
-## Lessons Learned
+## Lessons Learned — Post-Mortem
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Cosa ha funzionato ✅**
-
-- Reality Scan → MH Identity: workflow solido
-- Live Link per face mocap: risultato convincente
-- Cartwheel per il body mocap
-- Il pivot creativo stesso: trasformare un fallimento in contenuto
+### **Cosa ha funzionato ✅**
+- **MasterSequence:** workflow non distruttivo e organizzato.
+- **Lighting SubSequence:** iterazione luci indipendente dagli shot.
+- **CineCamera setup:** focali azzeccate per il ritmo della gag.
+- **Additive Tracks:** correzione efficace del mocap grezzo.
 :::
 ::: {.column width="50%"}
-**Cosa non ha funzionato ❌**
-
-- MH Editor diretto per somiglianza
-- FaceBuilder → texture workflow
-- Blender hair → Groom Asset in Unreal
+### **Criticità e Problemi ❌**
+- **Focus & DOF:** gestione manuale complessa negli shot in movimento.
+- **Mocap Sync:** disallineamento temporale tra body e face capture.
+- **Foot Anchoring:** scivolamenti residui nelle inquadrature zenitali.
+- **Scene Complexity:** gestione dei pesi delle animazioni multiple.
 :::
 :::
 
@@ -323,5 +299,4 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 
 *Federico & Dario*
 
-<!-- SEGNAPOSTO: immagine finale iconica / frame della scena -->
-<!-- Inserire: assets/final_frame.jpg -->
+![Frame Finale](consegna_files/img/intern_lighting.png){width=80% fig-align="center"}
