@@ -6,11 +6,13 @@
 <script src="consegna_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="consegna_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="consegna_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="consegna_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="consegna_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="consegna_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="consegna_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Dario Romano, Federico Colombo / Gruppo 5">
-  <title>Technical Post-Mortem: Assignment 2</title>
+  <title>Technical Post-Mortem: Assignment 3 - Cinematic Cutscene</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -131,7 +133,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Technical Post-Mortem: Assignment 2</h1>
+  <h1 class="title">Technical Post-Mortem: Assignment 3 - Cinematic Cutscene</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -142,9 +144,274 @@ Dario Romano, Federico Colombo / Gruppo 5
 </div>
 
 </section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
-<p>In this technical post-mortem, we will analyze the implementation of the second assignment, which involved creating a simple web application using Flask. The application was designed to allow users to submit their names and receive a personalized greeting. We will discuss the architecture of the application, the challenges faced during development, and the solutions implemented to overcome those challenges. # Application Architecture The application was structured using the Model-View-Controller (MVC) architecture. The Model represented</p>
+<section>
+<section id="assignment-3" class="title-slide slide level1 center">
+<h1>ASSIGNMENT 3</h1>
+<p><em>Realizzazione di una cutscene</em></p>
+</section>
+<section id="lidea-la-gag" class="slide level2">
+<h2>L’idea: la Gag</h2>
+<p><strong>Ispirazione:</strong> la lezione del professore sul <em>Post Mortem</em>.</p>
+<p><strong>Concept:</strong> Fede e Dario attorno a un tavolo operatorio, con Gustave-patient-zero sdraiato.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<pre><code>Zenitale sul tavolo, push in sul metahuman sdraiato.
+
+Dario: "Ma come ti è venuto in mente di partire da Blender
+        per poi passare su Unreal e pensare che venisse una cosa decente?"
+
+Fede:  "Vabè almeno ci ho provato, non è che possiamo fare
+        le cose giuste al primo tentativo"
+
+Dario: "Ho capito ma ti rendi conto di quello che ho dovuto fare
+        per farlo sembrare un minimo accettabile?"
+
+Fede:  "Eh sì che lo vedo, guarda quel naso lì, e poi manco hai
+        cambiato il preset di base di metahuman"
+
+Dario: "Magari con una mesh decente di partenza avrei avuto
+        anche più voglia di farlo giusto"</code></pre>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/photo_2026-05-14_12-53-17.jpg"></p>
+<figcaption>Storyboad</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="lambiente" class="slide level2">
+<h2>L’ambiente</h2>
+<p>Location creata per la prima consegna. Verrà riutilizzata invariata.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/Screenshot%202026-03-25%20225944.png" style="width:100.0%"></p>
+<figcaption>Ambiente — vista generale</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/Screenshot%202026-04-10%20194540.png" style="width:100.0%"></p>
+<figcaption>Interno casa</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="body-mocap-cartwheel" class="slide level2">
+<h2>Body Mocap — Cartwheel</h2>
+<p><strong>Valutazione strumenti IA</strong> per il mocap del corpo:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 20%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strumento</th>
+<th>Pro</th>
+<th>Contro</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cartwheel</td>
+<td>Qualità output, workflow pulito</td>
+<td>Solo 30’, ma arbitrari</td>
+</tr>
+<tr class="even">
+<td>Quickmagic</td>
+<td>Qualità dell’output</td>
+<td>Solo i primi 30’, sistema a crediti</td>
+</tr>
+<tr class="odd">
+<td>RADiCAL</td>
+<td>Qualità dell’output</td>
+<td>Solo i primi 20’, sistema a crediti</td>
+</tr>
+</tbody>
+</table>
+<p>Abbiamo optato per Cartwheel.</p>
+</section>
+<section id="body-mocap-grezzo-dario---risultato" class="slide level2">
+<h2>Body Mocap Grezzo (Dario) - Risultato</h2>
+<pre><code>Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH</code></pre>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/IMG_7567_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/IMG_7567_compressed.mp4">Video</a></video></p>
+<figcaption>Live action</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4">Video</a></video></p>
+<figcaption>Risultato</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="body-mocap-grezzo-federico--risultato" class="slide level2">
+<h2>Body Mocap Grezzo (Federico)- Risultato</h2>
+<pre><code>Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH</code></pre>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/IMG_7573_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/IMG_7573_compressed.mp4">Video</a></video></p>
+<figcaption>Live action</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4">Video</a></video></p>
+<figcaption>Risultato</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="correzioni-alle-animazioni-additive-track" class="slide level2">
+<h2>Correzioni alle Animazioni — Additive Track</h2>
+<p>Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Interventi:</strong></p>
+<ul>
+<li>Posizione <strong>dita e mani</strong></li>
+<li>Rotazione <strong>occhi</strong></li>
+<li>Ancoraggio <strong>piedi a terra</strong> (entrambe le riprese zenitali)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/Screenshot%202026-03-25%20225944.png" style="width:100.0%"></p>
+<figcaption>Ambiente di lavoro</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="face-mocap-live-link" class="slide level2">
+<h2>Face Mocap — Live Link</h2>
+<p><strong>Workflow:</strong></p>
+<pre><code>Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH</code></pre>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/20260503-0922-52.2157201_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/20260503-0922-52.2157201_compressed.mp4">Video</a></video></p>
+<figcaption>Mocap Facciale Dario</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><video data-src="consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4" style="width:100.0%" controls=""><a href="consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4">Video</a></video></p>
+<figcaption>Mocap Facciale Federico</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="le-inquadrature-camera-cuts" class="slide level2">
+<h2>Le Inquadrature — Camera Cuts</h2>
+<p>Cinque inquadrature principali, alternate tramite <strong>Camera Cuts</strong> in Unreal.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Inquadratura</th>
+<th>Focale</th>
+<th>Motivazione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Totale sulla casa</td>
+<td><strong>200mm</strong></td>
+<td>Taglio familiare e accogliente</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Zenitale sul tavolo</td>
+<td><strong>30mm</strong></td>
+<td>Ampia visione della scena</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Su Dario</td>
+<td><strong>30mm</strong></td>
+<td>Dialogo</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Su Federico</td>
+<td><strong>30mm</strong></td>
+<td>Dialogo</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Dettaglio naso Gustave</td>
+<td><strong>85mm</strong></td>
+<td>Close-up di qualità</td>
+</tr>
+</tbody>
+</table>
+<p>1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 2</p>
+</section>
+<section id="illuminazione" class="slide level2">
+<h2>Illuminazione</h2>
+<p><strong>Setup a tre luci:</strong></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>Key light</strong> Rect Light dalla finestra</p>
+<p><strong>Fill light</strong> Ray tracing ambientale</p>
+<p><strong>Rim light</strong> Due Rect Light dietro ai personaggi</p>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="consegna_files/img/Screenshot%202026-04-10%20194540.png" style="width:100.0%"></p>
+<figcaption>Risultato Ambiente</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="risultato-finale" class="slide level2">
+<h2>Risultato Finale</h2>
+<video id="video_shortcode_videojs_video1" width="100%" class="video-js vjs-default-skin vjs-big-play-centered " controls="" preload="auto" data-setup="{}" title=""><source src="consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4"></video>
+
+<img data-src="consegna_files/img/Screenshot%202026-05-03%20112239.png" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Still dalla cutscene finale</p></section>
+<section id="lessons-learned" class="slide level2">
+<h2>Lessons Learned</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Cosa ha funzionato ✅</strong></p>
+<ul>
+<li>Reality Scan → MH Identity: workflow solido</li>
+<li>Live Link per face mocap: risultato convincente</li>
+<li>Cartwheel per il body mocap</li>
+<li>Il pivot creativo stesso: trasformare un fallimento in contenuto</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Cosa non ha funzionato ❌</strong></p>
+<ul>
+<li>MH Editor diretto per somiglianza</li>
+<li>FaceBuilder → texture workflow</li>
+<li>Blender hair → Groom Asset in Unreal</li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="grazie-per-lattenzione" class="title-slide slide level1 center">
+<h1>Grazie per l’attenzione!</h1>
+<p><em>Federico &amp; Dario</em></p>
 
 </section>
     </div>
@@ -530,6 +797,7 @@ Dario Romano, Federico Colombo / Gruppo 5
         }
       });
       </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>

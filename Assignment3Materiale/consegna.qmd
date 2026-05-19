@@ -1,0 +1,233 @@
+---
+title: "Technical Post-Mortem: Assignment 3 - Cinematic Cutscene"
+author: "Dario Romano, Federico Colombo / Gruppo 5"
+format:
+  revealjs: 
+    theme: night
+    slide-number: true
+    smaller: true
+    transition: fade
+    scrollable: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    geometry:
+      - top=20mm
+      - bottom=20mm
+      - left=20mm
+      - right=20mm
+---
+
+# ASSIGNMENT 3 
+
+*Realizzazione di una cutscene*
+
+---
+
+## L'idea: la Gag
+
+**Ispirazione:** la lezione del professore sul *Post Mortem*.
+
+**Concept:** Fede e Dario attorno a un tavolo operatorio, con Gustave-patient-zero sdraiato.
+
+::: {.columns}
+::: {.column width="60%"}
+```
+Zenitale sul tavolo, push in sul metahuman sdraiato.
+
+Dario: "Ma come ti è venuto in mente di partire da Blender
+        per poi passare su Unreal e pensare che venisse una cosa decente?"
+
+Fede:  "Vabè almeno ci ho provato, non è che possiamo fare
+        le cose giuste al primo tentativo"
+
+Dario: "Ho capito ma ti rendi conto di quello che ho dovuto fare
+        per farlo sembrare un minimo accettabile?"
+
+Fede:  "Eh sì che lo vedo, guarda quel naso lì, e poi manco hai
+        cambiato il preset di base di metahuman"
+
+Dario: "Magari con una mesh decente di partenza avrei avuto
+        anche più voglia di farlo giusto"
+```
+:::
+::: {.column width="40%"}
+![Storyboad](consegna_files/img/photo_2026-05-14_12-53-17.jpg)
+:::
+:::
+
+---
+
+## L'ambiente
+
+Location creata per la prima consegna. Verrà riutilizzata invariata.
+
+::: {.columns}
+::: {.column width="50%"}
+![Ambiente — vista generale](consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
+:::
+::: {.column width="50%"}
+![Interno casa](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+:::
+:::
+
+---
+
+## Body Mocap — Cartwheel
+
+**Valutazione strumenti IA** per il mocap del corpo:
+
+| Strumento | Pro | Contro |
+|-----------|-----|--------|
+| Cartwheel | Qualità output, workflow pulito | Solo 30', ma arbitrari |
+| Quickmagic | Qualità dell'output | Solo i primi 30', sistema a crediti |
+| RADiCAL | Qualità dell'output | Solo i primi 20', sistema a crediti |
+
+Abbiamo optato per Cartwheel.
+
+---
+
+## Body Mocap Grezzo (Dario) - Risultato
+
+```
+Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
+```
+
+::: {.columns}
+::: {.column width="50%"}
+![Live action](consegna_files/vid/IMG_7567_compressed.mp4){width=100%}
+:::
+::: {.column width="50%"}
+![Risultato](consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4){width=100%}
+:::
+:::
+
+---
+
+## Body Mocap Grezzo (Federico)- Risultato
+
+```
+Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
+```
+
+::: {.columns}
+::: {.column width="50%"}
+![Live action](consegna_files/vid/IMG_7573_compressed.mp4){width=100%}
+:::
+::: {.column width="50%"}
+![Risultato](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4){width=100%}
+:::
+:::
+
+---
+
+## Correzioni alle Animazioni — Additive Track
+
+Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer.
+
+::: {.columns}
+::: {.column width="50%"}
+**Interventi:**
+
+- Posizione **dita e mani**
+- Rotazione **occhi**
+- Ancoraggio **piedi a terra** (entrambe le riprese zenitali)
+:::
+::: {.column width="50%"}
+![Ambiente di lavoro](consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
+:::
+:::
+
+---
+
+## Face Mocap — Live Link
+
+**Workflow:**
+
+```
+Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
+```
+
+::: {.columns}
+::: {.column width="50%"}
+![Mocap Facciale Dario](consegna_files/vid/20260503-0922-52.2157201_compressed.mp4){width=100%}
+:::
+::: {.column width="50%"}
+![Mocap Facciale Federico](consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4){width=100%}
+:::
+:::
+
+---
+
+## Le Inquadrature — Camera Cuts
+
+Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
+
+| # | Inquadratura | Focale | Motivazione |
+|---|-------------|--------|-------------|
+| 1 | Totale sulla casa | **200mm** | Taglio familiare e accogliente |
+| 2 | Zenitale sul tavolo | **30mm** | Ampia visione della scena |
+| 3 | Su Dario | **30mm** | Dialogo |
+| 4 | Su Federico | **30mm** | Dialogo |
+| 5 | Dettaglio naso Gustave | **85mm** | Close-up di qualità |
+
+1 -> 2 -> 3 -> 4 -> 5 -> 2
+
+---
+
+## Illuminazione
+
+**Setup a tre luci:**
+
+::: {.columns}
+::: {.column width="40%"}
+**Key light**
+Rect Light dalla finestra
+
+**Fill light**
+Ray tracing ambientale
+
+**Rim light**
+Due Rect Light dietro ai personaggi
+:::
+::: {.column width="60%"}
+![Risultato Ambiente](consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
+:::
+:::
+
+---
+
+## Risultato Finale
+
+{{< video consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4 width="100%" >}}
+
+![Still dalla cutscene finale](consegna_files/img/Screenshot%202026-05-03%20112239.png){width=80% fig-align="center"}
+
+---
+
+## Lessons Learned
+
+::: {.columns}
+::: {.column width="50%"}
+**Cosa ha funzionato ✅**
+
+- Reality Scan → MH Identity: workflow solido
+- Live Link per face mocap: risultato convincente
+- Cartwheel per il body mocap
+- Il pivot creativo stesso: trasformare un fallimento in contenuto
+:::
+::: {.column width="50%"}
+**Cosa non ha funzionato ❌**
+
+- MH Editor diretto per somiglianza
+- FaceBuilder → texture workflow
+- Blender hair → Groom Asset in Unreal
+:::
+:::
+
+---
+
+# Grazie per l'attenzione!
+
+*Federico & Dario*

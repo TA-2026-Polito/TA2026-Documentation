@@ -21,7 +21,7 @@ format:
 
 # ASSIGNMENT 2 
 
-*Ascesa, declino e rinascita ei un'idea*
+*Ascesa, declino e rinascita di un'idea*
 
 ---
 
@@ -31,13 +31,9 @@ format:
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del video YouTube (Uk1UO-nbqVg) -->
-<!-- Inserire: assets/ref_expedition33.jpg -->
-![Reference — Expedition 33](Assignment3Materiale/consegna_files/vid/F_ck%20The%20Mission%20-%20Gustave%20and%20Lune%20-%20Clair%20Obscur_%20Expedition%2033%20%5BvS1LlHyM5X0%5D.mp4){width=100%}
+![Reference — Expedition 33](Assignment2Materiale/consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot di gioco con Gustave e Lune -->
-<!-- Inserire: assets/ref_gustave_lune.jpg -->
 ![Gustave in-game](Assignment2Materiale/consegna_files/img/20260421154532_1.jpg){width=100%}
 ![Lune in-game](Assignment2Materiale/consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
 
@@ -52,8 +48,6 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot MH editor con il viso in lavorazione -->
-<!-- Inserire: assets/mh_editor_attempt.jpg -->
 ![Lune](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2015.57.28.jpeg){width=50%}
 ![Gustave](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2021.07.10.jpeg){width=100%}
 :::
@@ -72,8 +66,6 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 **Workflow:** scan facciale → MH Identity → import in Unreal
 
-<!-- SEGNAPOSTO: schema/diagramma del workflow -->
-<!-- Inserire: assets/workflow_facebuilder.png -->
 ![Workflow FaceBuilder](Assignment2Materiale/consegna_files/img/Screenshot%202026-04-21%20170402.png){width=70% fig-align="center"}
 
 ---
@@ -81,8 +73,6 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 ## Tentativo 2 — Risultato
 
 ![](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-21%20at%2018.01.30.jpeg){width=70% fig-align="center"}
-
-
 
 ---
 
@@ -102,8 +92,6 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 ---
 
 ## Soluzione - Metahuman di Dario e Federico
-
-Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri metahuman per farli discutere sul precedente fallimento.
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -131,9 +119,7 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Capelli importati da asset esterni
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Federico (scan → MH) -->
-<!-- Inserire: assets/fede_scan_vs_mh.jpg o .gif -->
-![Federico — scan → MetaHuman](assets/fede_scan_vs_mh.jpg){width=100%}
+![Federico — MetaHuman Result](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Dario**
@@ -141,9 +127,7 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Barba e baffi da libreria MH
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Dario (scan → MH) -->
-<!-- Inserire: assets/dario_scan_vs_mh.jpg o .gif -->
-![Dario — scan → MetaHuman](assets/dario_scan_vs_mh.jpg){width=100%}
+![Dario — MetaHuman Result](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg){width=100%}
 :::
 :::
 
@@ -155,18 +139,14 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del lavoro capelli su Blender (venuto bene) -->
-<!-- Inserire: assets/hair_blender.jpg -->
 ![](Assignment2Materiale/consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2012.53.02.jpeg){width=100%}
 
 *Il lavoro su Blender era venuto bene...*
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
-<!-- Inserire: assets/hair_import_fail.jpg -->
-![Import in Unreal — problemi](assets/hair_import_fail.jpg){width=100%}
+![Esempio di artefatti/difficoltà](Assignment2Materiale/consegna_files/img/Screenshot%202026-04-21%20170402.png){width=100%}
 
-*...ma l'import in Unreal era un incubo.*
+*...ma l'import in Unreal e il matching erano problematici.*
 :::
 :::
 
@@ -181,8 +161,6 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 ## L'idea: la Gag
 
 **Ispirazione:** la lezione del professore sul *Post Mortem*.
-
-> E se mettessimo noi stessi in scena, a discutere del MetaHuman venuto male?
 
 **Concept:** Fede e Dario attorno a un tavolo operatorio, con Gustave-patient-zero sdraiato.
 
@@ -220,13 +198,9 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot dell'ambiente in Unreal -->
-<!-- Inserire: assets/environment_overview.jpg -->
 ![Ambiente — vista generale](Assignment3Materiale/consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot interno della casa -->
-<!-- Inserire: assets/environment_interior.jpg -->
 ![Interno casa](Assignment3Materiale/consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
 :::
 :::
@@ -243,11 +217,7 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 | Quickmagic | Qualità dell'output | Solo i primi 30', sistema a crediti |
 | RADiCAL | Qualità dell'output | Solo i primi 20', sistema a crediti |
 
-
-<!-- SEGNAPOSTO: tabella comparativa degli strumenti valutati -->
-<!-- Se avete screenshot/note di confronto, aggiungere qui -->
-
-Abbiamo quindi optato per utilizzare Cartwheel
+Abbiamo optato per Cartwheel.
 
 ---
 
@@ -259,13 +229,9 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
 ![Live action](Assignment3Materiale/consegna_files/vid/IMG_7567_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
 ![Risultato](Assignment3Materiale/consegna_files/vid/WhatsApp%20Video%202026-04-28%20at%2010.22.01_compressed.mp4){width=100%}
 :::
 :::
@@ -280,13 +246,9 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
 ![Live action](Assignment3Materiale/consegna_files/vid/IMG_7573_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
 ![Risultato](Assignment3Materiale/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.19.37_compressed.mp4){width=100%}
 :::
 :::
@@ -295,7 +257,7 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 
 ## Correzioni alle Animazioni — Additive Track
 
-Il risultato grezzo di Cartwheel richiedeva correzioni manuale nel Sequencer.
+Il risultato grezzo di Cartwheel richiedeva correzioni manuali nel Sequencer.
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -306,15 +268,9 @@ Il risultato grezzo di Cartwheel richiedeva correzioni manuale nel Sequencer.
 - Ancoraggio **piedi a terra** (entrambe le riprese zenitali)
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del Sequencer con le additive track -->
-<!-- Inserire: assets/sequencer_additive.jpg -->
-![Sequencer — Additive Track](assets/sequencer_additive.jpg){width=100%}
+![Ambiente di lavoro](Assignment3Materiale/consegna_files/img/Screenshot%202026-03-25%20225944.png){width=100%}
 :::
 :::
-
-<!-- SEGNAPOSTO: GIF comparativa prima/dopo correzione -->
-<!-- Inserire: assets/anim_correction_comparison.gif -->
-![Prima / Dopo correzione](assets/anim_correction_comparison.gif){width=70% fig-align="center"}
 
 ---
 
@@ -328,13 +284,9 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
 ![Mocap Facciale Dario](Assignment3Materiale/consegna_files/vid/20260503-0922-52.2157201_compressed.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
 ![Mocap Facciale Federico](Assignment3Materiale/consegna_files/vid/WhatsApp%20Video%202026-05-03%20at%2012.03.26_compressed.mp4){width=100%}
 :::
 :::
@@ -353,8 +305,6 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 | 4 | Su Federico | **30mm** | Dialogo |
 | 5 | Dettaglio naso Gustave | **85mm** | Close-up di qualità |
 
-<!-- SEGNAPOSTO: grid con screenshot delle 5 camere in Unreal -->
-<!-- Inserire: assets/cameras_grid.jpg (montaggio 5 screenshot) -->
 1 -> 2 -> 3 -> 4 -> 5 -> 2
 
 ---
@@ -366,45 +316,16 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 ::: {.columns}
 ::: {.column width="40%"}
 **Key light**
-Rect Light che potenzia la luce proveniente dalla finestra della casa
+Rect Light dalla finestra
 
 **Fill light**
-Ray tracing ambientale (fornito dall'ambiente e dall'engine)
+Ray tracing ambientale
 
 **Rim light**
-Due Rect Light dietro ai personaggi — una per Federico, una per Dario
+Due Rect Light dietro ai personaggi
 :::
 ::: {.column width="60%"}
-<!-- SEGNAPOSTO: schema di illuminazione (disegno o screenshot Unreal) -->
-<!-- Inserire: assets/lighting_schema.jpg -->
-![Schema luci](assets/lighting_schema.jpg){width=100%}
-
-<!-- SEGNAPOSTO: screenshot del risultato illuminato finale -->
-<!-- Inserire: assets/lighting_result.jpg -->
-![Risultato illuminazione](assets/lighting_result.jpg){width=100%}
-:::
-:::
-
----
-
-## Sound Design
-
-::: {.columns}
-::: {.column width="50%"}
-**Tracce audio:**
-
-- 🌬️ **Vento** — establishing shot (esterno)
-- 🐦 **Cinguettii** — establishing shot (esterno)
-- 📉 **Fade** del volume nel passaggio esterno → interno
-
-<!-- SEGNAPOSTO: screenshot del Sequencer con le tracce audio -->
-<!-- Inserire: assets/sequencer_audio.jpg -->
-![Sequencer — tracce audio](assets/sequencer_audio.jpg){width=100%}
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: waveform o timeline audio se disponibile -->
-<!-- Inserire: assets/audio_waveform.jpg -->
-![Audio timeline](assets/audio_waveform.jpg){width=100%}
+![Risultato Ambiente](Assignment3Materiale/consegna_files/img/Screenshot%202026-04-10%20194540.png){width=100%}
 :::
 :::
 
@@ -412,20 +333,9 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 
 ## Risultato Finale
 
-<!-- SEGNAPOSTO: video embed della cutscene completa -->
-<!-- Opzione 1 — video locale: -->
-<!-- {{< video assets/cutscene_final.mp4 width="100%" >}} -->
+{{< video Assignment3Materiale/consegna_files/vid/WhatsApp%20Video%202026-05-11%20at%2012.22.08_compressed.mp4 width="100%" >}}
 
-<!-- Opzione 2 — YouTube/Vimeo: -->
-<!-- {{< video https://www.youtube.com/watch?v=XXXX width="100%" >}} -->
-
-::: {.callout-tip}
-Inserire qui il video finale della cutscene con `{{< video ... >}}`
-:::
-
-<!-- SEGNAPOSTO: screenshot still della scena finale come fallback -->
-<!-- Inserire: assets/final_still.jpg -->
-![Still dalla cutscene finale](assets/final_still.jpg){width=80% fig-align="center"}
+![Still dalla cutscene finale](Assignment3Materiale/consegna_files/img/Screenshot%202026-05-03%20112239.png){width=80% fig-align="center"}
 
 ---
 
@@ -454,6 +364,3 @@ Inserire qui il video finale della cutscene con `{{< video ... >}}`
 # Grazie per l'attenzione!
 
 *Federico & Dario*
-
-<!-- SEGNAPOSTO: immagine finale iconica / frame della scena -->
-<!-- Inserire: assets/final_frame.jpg -->

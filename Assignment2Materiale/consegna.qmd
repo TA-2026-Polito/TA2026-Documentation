@@ -1,5 +1,5 @@
 ---
-title: "Technical Post-Mortem: Assignment 2"
+title: "Technical Post-Mortem: Assignment 2 - Character Creation"
 author: "Dario Romano, Federico Colombo / Gruppo 5"
 format:
   revealjs: 
@@ -18,7 +18,134 @@ format:
       - left=20mm
       - right=20mm
 ---
-# Introduction
-In this technical post-mortem, we will analyze the implementation of the second assignment, which involved creating a simple web application using Flask. The application was designed to allow users to submit their names and receive a personalized greeting. We will discuss the architecture of the application, the challenges faced during development, and the solutions implemented to overcome those challenges.
-# Application Architecture
-The application was structured using the Model-View-Controller (MVC) architecture. The Model represented
+
+# ASSIGNMENT 2 
+
+*Ascesa, declino e rinascita di un'idea*
+
+---
+
+## La reference: Expedition 33
+
+**Obiettivo:** ricreare la scena del litigio tra Gustave e Lune.
+
+::: {.columns}
+::: {.column width="50%"}
+![Reference — Expedition 33](consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
+:::
+::: {.column width="50%"}
+![Gustave in-game](consegna_files/img/20260421154532_1.jpg){width=100%}
+![Lune in-game](consegna_files/img/lune-expedition-33-looking-for-feedback-v0-50njwtvmfrtf1.jpg){width=100%}
+
+:::
+:::
+
+---
+
+## Tentativo 1 — MetaHuman Editor diretto
+
+Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
+
+::: {.columns}
+::: {.column width="50%"}
+![Lune](consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2015.57.28.jpeg){width=50%}
+![Gustave](consegna_files/img/WhatsApp%20Image%202026-04-16%20at%2021.07.10.jpeg){width=100%}
+:::
+::: {.column width="50%"}
+**Problemi riscontrati:**
+
+- Personalizzazione limitata
+- Effetto **uncanny valley**: modificata una parte, il resto non torna più
+- Impossibile ottenere una somiglianza credibile
+:::
+:::
+
+---
+
+## Tentativo 2 — FaceBuilder su Blender
+
+**Workflow:** scan facciale → MH Identity → import in Unreal
+
+![Workflow FaceBuilder](consegna_files/img/Screenshot%202026-04-21%20170402.png){width=70% fig-align="center"}
+
+---
+
+## Tentativo 2 — Risultato
+
+![](consegna_files/img/WhatsApp%20Image%202026-04-21%20at%2018.01.30.jpeg){width=70% fig-align="center"}
+
+---
+
+## Soluzione - Metahuman di Dario e Federico
+
+Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri metahuman per farli discutere sul precedente fallimento.
+
+::: {.columns}
+::: {.column width="50%"}
+![](consegna_files/img/Screenshot%202026-04-24%20183625.png)
+:::
+::: {.column width="50%"}
+![](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2010.47.59.jpeg)
+:::
+:::
+
+---
+
+## Soluzione - Metahuman di Dario e Federico
+
+::: {.columns}
+::: {.column width="50%"}
+![Dario](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg)
+:::
+::: {.column width="50%"}
+![Federico](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg)
+:::
+:::
+
+---
+
+## Character Creation Workflow
+
+
+```
+Video selfie rotante  →  Reality Scan  →  Scan pulito
+      →  MH Identity  →  MetaHuman base  →  Vestiti + capelli
+```
+
+::: {.columns}
+::: {.column width="50%"}
+**Federico**
+
+- Capelli importati da asset esterni
+- Clothes importati e fittati
+
+![Federico — MetaHuman Result](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2011.27.13.jpeg){width=100%}
+:::
+::: {.column width="50%"}
+**Dario**
+
+- Barba e baffi da libreria MH
+- Clothes importati e fittati
+
+![Dario — MetaHuman Result](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2009.57.41.jpeg){width=100%}
+:::
+:::
+
+---
+
+## Capelli su Blender — e perché l'abbiamo abbandonato
+
+**Tentativo:** Blender → Alembic → Groom Asset in Unreal
+
+::: {.columns}
+::: {.column width="50%"}
+![](consegna_files/img/WhatsApp%20Image%202026-04-28%20at%2012.53.02.jpeg){width=100%}
+
+*Il lavoro su Blender era venuto bene...*
+:::
+::: {.column width="50%"}
+![Esempio di artefatti/difficoltà](consegna_files/img/Screenshot%202026-04-21%20170402.png){width=100%}
+
+*...ma l'import in Unreal e il matching erano problematici.*
+:::
+:::
