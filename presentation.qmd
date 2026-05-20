@@ -382,7 +382,7 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 ## Risultato Finale
 
 <!-- SEGNAPOSTO: video embed della cutscene completa -->
-{{< video TA-G05-Assignment-03/Presentation/consegna_files/vid/sceneacting_unlit.mp4 width="100%" >}}
+![Result](TA-G05-Assignment-03/Presentation/consegna_files/vid/MainSequence2_compressed.mp4)
 
 ---
 
