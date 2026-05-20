@@ -55,7 +55,7 @@ Dario: "Magari con una mesh decente di partenza avrei avuto
 ```
 :::
 ::: {.column width="40%"}
-![Storyboard](TA-G05-Assignment-03/Presentation/consegna_files/img/storyboard.jpg)
+![Storyboard](consegna_files/img/storyboard.jpg)
 :::
 :::
 
@@ -68,11 +68,11 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot dell'ambiente in Unreal -->
-![Ambiente — vista generale](TA-G05-Assignment-03/Presentation/consegna_files/img/ambient.png){width=100%}
+![Ambiente — vista generale](consegna_files/img/ambient.png){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot interno della casa -->
-![Interno casa](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=100%}
+![Interno casa](consegna_files/img/intern_lighting.png){width=100%}
 :::
 :::
 
@@ -117,11 +117,11 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Dario.mp4){width=100%}
+![Live action](consegna_files/vid/cartwheel_Dario.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
-![Risultato](TA-G05-Assignment-03/Presentation/consegna_files/vid/darioMH_acting.mp4){width=100%}
+![Risultato](consegna_files/vid/darioMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -136,11 +136,11 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Fede.mp4){width=100%}
+![Live action](consegna_files/vid/cartwheel_Fede.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
-![Risultato](TA-G05-Assignment-03/Presentation/consegna_files/vid/fedeMH_acting.mp4){width=100%}
+![Risultato](consegna_files/vid/fedeMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -176,11 +176,11 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-![Mocap Facciale Dario](TA-G05-Assignment-03/Presentation/consegna_files/vid/dario_faceactingvideo.mp4){width=100%}
+![Mocap Facciale Dario](consegna_files/vid/dario_faceactingvideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
-![Mocap Facciale Federico](TA-G05-Assignment-03/Presentation/consegna_files/vid/fede_faceacting.mp4){width=100%}
+![Mocap Facciale Federico](consegna_files/vid/fede_faceacting.mp4){width=100%}
 :::
 :::
 
@@ -203,19 +203,19 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 Sequenza delle camere: 1 → 2 → 3 → 4 → 5 → 2
 
 # 1. Totale sulla casa
-![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_totale.png)
+![](consegna_files/img/inq_totale.png)
 
 # 2. Zenitale sul tavolo
-![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_zenit.png)
+![](consegna_files/img/inq_zenit.png)
 
 # 3. Inquadratura su Dario
-![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_dario.png)
+![](consegna_files/img/inq_dario.png)
 
 # 4. Inquadratura su Federico
-![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_fede.png)
+![](consegna_files/img/inq_fede.png)
 
 # 5. Inquadratura su "Gustave"
-![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_gustave.png)
+![](consegna_files/img/inq_gustave.png)
 
 
 
@@ -236,7 +236,7 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="60%"}
 <!-- SEGNAPOSTO: schema di illuminazione -->
-![Schema luci](TA-G05-Assignment-03/Presentation/consegna_files/img/light_placement.png){width=100%}
+![Schema luci](consegna_files/img/light_placement.png){width=100%}
 
 :::
 :::
@@ -246,7 +246,7 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 ## Risultato Finale
 
 <!-- SEGNAPOSTO: video embed della cutscene completa -->
-![Result](TA-G05-Assignment-03/Presentation/consegna_files/vid/MainSequence2_compressed.mp4)
+![Result](consegna_files/vid/TA-G05-Assignment-03-Cinematic.mp4)
 
 ---
 

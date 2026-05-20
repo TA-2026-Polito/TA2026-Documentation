@@ -32,12 +32,12 @@ format:
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del video YouTube (Uk1UO-nbqVg) -->
-![Reference — Expedition 33](TA-G05-Assignment-02/Presentation/consegna_files/vid/expedition_referencevideo.mp4){width=100%}
+![Reference — Expedition 33](consegna_files/vid/expedition_referencevideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot di gioco con Gustave e Lune -->
-![Gustave in-game](TA-G05-Assignment-02/Presentation/consegna_files/img/gustave_front.jpg){width=100%}
-![Lune in-game](TA-G05-Assignment-02/Presentation/consegna_files/img/lune.jpg){width=100%}
+![Gustave in-game](consegna_files/img/gustave_front.jpg){width=100%}
+![Lune in-game](consegna_files/img/lune.jpg){width=100%}
 
 :::
 :::
@@ -51,8 +51,8 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot MH editor con il viso in lavorazione -->
-![Lune](TA-G05-Assignment-02/Presentation/consegna_files/img/luneMHtrial.jpeg){width=50%}
-![Gustave](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveComparison.jpeg){width=100%}
+![Lune](consegna_files/img/luneMHtrial.jpeg){width=50%}
+![Gustave](consegna_files/img/gustaveComparison.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Problemi riscontrati:**
@@ -70,7 +70,7 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 **Workflow:** scan reference → MH Identity → import in Unreal
 
 <!-- SEGNAPOSTO: schema/diagramma del workflow -->
-![Workflow FaceBuilder](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveScanTrial.jpeg){width=70% fig-align="center"}
+![Workflow FaceBuilder](consegna_files/img/gustaveScanTrial.jpeg){width=70% fig-align="center"}
 
 ---
 
@@ -80,10 +80,10 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ::: {.columns}
 ::: {.column width="50%"}
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_scanRC.png)
+![](consegna_files/img/dario_scanRC.png)
 :::
 ::: {.column width="50%"}
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeScan.jpeg)
+![](consegna_files/img/fedeScan.jpeg)
 :::
 :::
 
@@ -95,10 +95,10 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ::: {.columns}
 ::: {.column width="50%"}
-![Dario](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_MH.jpeg)
+![Dario](consegna_files/img/dario_MH.jpeg)
 :::
 ::: {.column width="50%"}
-![Federico](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeMH.jpeg)
+![Federico](consegna_files/img/fedeMH.jpeg)
 :::
 :::
 
@@ -137,13 +137,13 @@ Video selfie rotante → Reality Scan → Scan pulito → MH Identity → MetaHu
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del lavoro capelli su Blender -->
-![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeHairTrial.jpeg){width=100%}
+![](consegna_files/img/fedeHairTrial.jpeg){width=100%}
 
 *Il lavoro su Blender era venuto bene...*
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
-![](TA-G05-Assignment-02/Presentation/consegna_files/vid/20260520-0815-24.7608731.mp4){width=100%}
+![](consegna_files/vid/20260520-0815-24.7608731.mp4){width=100%}
 
 *...ma l'import in Unreal era un incubo.*
 :::
