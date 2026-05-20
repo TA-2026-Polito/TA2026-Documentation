@@ -202,8 +202,6 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 <!-- SEGNAPOSTO: grid con screenshot delle 5 camere in Unreal -->
 Sequenza delle camere: 1 → 2 → 3 → 4 → 5 → 2
 
----
-
 # 1. Totale sulla casa
 ![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_totale.png)
 

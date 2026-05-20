@@ -143,7 +143,7 @@ Video selfie rotante → Reality Scan → Scan pulito → MH Identity → MetaHu
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
-![Import in Unreal — problemi](TA-G05-Assignment-02/Presentation/consegna_files/img/FOTO_CAPELLI_BUGGATI.png){width=100%}
+![](TA-G05-Assignment-02/Presentation/consegna_files/vid/20260520-0815-24.7608731.mp4){width=100%}
 
 *...ma l'import in Unreal era un incubo.*
 :::
