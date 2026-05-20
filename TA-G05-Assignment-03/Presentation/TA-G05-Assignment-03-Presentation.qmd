@@ -55,7 +55,7 @@ Dario: "Magari con una mesh decente di partenza avrei avuto
 ```
 :::
 ::: {.column width="40%"}
-![Storyboard](consegna_files/img/storyboard.jpg)
+![Storyboard](TA-G05-Assignment-03/Presentation/consegna_files/img/storyboard.jpg)
 :::
 :::
 
@@ -68,13 +68,11 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot dell'ambiente in Unreal -->
-<!-- Inserire: assets/environment_overview.jpg -->
-![Ambiente — vista generale](consegna_files/img/ambient.png){width=100%}
+![Ambiente — vista generale](TA-G05-Assignment-03/Presentation/consegna_files/img/ambient.png){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot interno della casa -->
-<!-- Inserire: assets/environment_interior.jpg -->
-![Interno casa](consegna_files/img/intern_lighting.png){width=100%}
+![Interno casa](TA-G05-Assignment-03/Presentation/consegna_files/img/intern_lighting.png){width=100%}
 :::
 :::
 
@@ -84,19 +82,12 @@ Location creata per la prima consegna. Verrà riutilizzata invariata.
 
 Organizzazione multidipartimentale del lavoro tramite la gerarchia del Sequencer.
 
-::: {.columns}
-::: {.column width="50%"}
+
 **Workflow adottato:**
 - **MasterSequence:** Per la gestione dei Camera Cuts e l'editing globale.
-- **SequenceShots:** Per l'isolamento e la lavorazione delle singole inquadrature.
-- **SubSequence Lighting:** Per tenere la configurazione delle luci separata dalle animazioni.
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot della timeline del Sequencer che mostri la MasterSequence, gli Shot e la traccia SubSequences per il Lighting -->
-<!-- Inserire: assets/master_sequence_structure.jpg -->
-![Struttura Sequencer](assets/master_sequence_structure.jpg){width=100%}
-:::
-:::
+- **Camera cuts:** Per l'isolamento e la lavorazione delle singole inquadrature.
+- **SubSequence:** Ognuno dei due MetaHuman presenta la propria sottosequenza così che i due persoanggi avessero animazioni autonome.
+
 
 ---
 
@@ -112,7 +103,6 @@ Organizzazione multidipartimentale del lavoro tramite la gerarchia del Sequencer
 
 
 <!-- SEGNAPOSTO: tabella comparativa degli strumenti valutati -->
-<!-- Se avete screenshot/note di confronto, aggiungere qui -->
 
 Abbiamo quindi optato per utilizzare Cartwheel
 
@@ -127,13 +117,11 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
-![Live action](consegna_files/vid/dario_acting.mp4){width=100%}
+![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Dario.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
-![Risultato](consegna_files/vid/darioMH_acting.mp4){width=100%}
+<!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
+![Risultato](TA-G05-Assignment-03/Presentation/consegna_files/vid/darioMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -148,13 +136,11 @@ Ripresa con cellulare  →  Cartwheel  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
-![Live action](consegna_files/vid/fede_acting.mp4){width=100%}
+![Live action](TA-G05-Assignment-03/Presentation/consegna_files/vid/cartwheel_Fede.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
-![Risultato](consegna_files/vid/fedeMH_acting.mp4){width=100%}
+<!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
+![Risultato](TA-G05-Assignment-03/Presentation/consegna_files/vid/fedeMH_acting.mp4){width=100%}
 :::
 :::
 
@@ -173,15 +159,9 @@ Il risultato grezzo di Cartwheel richiedeva correzioni manuale nel Sequencer.
 - Ancoraggio **piedi a terra** (entrambe le riprese zenitali)
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del Sequencer con le additive track visibili sui personaggi -->
-<!-- Inserire: assets/sequencer_additive.jpg -->
-![Sequencer — Additive Track](assets/sequencer_additive.jpg){width=100%}
+<!-- SEGNAPOSTO: screenshot del Sequencer con le additive track -->
 :::
 :::
-
-<!-- SEGNAPOSTO: GIF comparativa prima/dopo correzione -->
-<!-- Inserire: assets/anim_correction_comparison.gif -->
-![Prima / Dopo correzione](assets/anim_correction_comparison.gif){width=70% fig-align="center"}
 
 ---
 
@@ -196,13 +176,11 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: foto/screenshot della ripresa con cellulare per Live Link -->
-<!-- Inserire: assets/livelink_capture.jpg -->
-![Mocap Facciale Dario](consegna_files/vid/dario_faceactingvideo.mp4){width=100%}
+![Mocap Facciale Dario](TA-G05-Assignment-03/Presentation/consegna_files/vid/dario_faceactingvideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: GIF/video del dialogo animato sui MetaHuman -->
-<!-- Inserire: assets/livelink_result.gif -->
-![Mocap Facciale Federico](consegna_files/vid/fede_faceacting.mp4){width=100%}
+<!-- SEGNAPOSTO: video del dialogo animato sui MetaHuman -->
+![Mocap Facciale Federico](TA-G05-Assignment-03/Presentation/consegna_files/vid/fede_faceacting.mp4){width=100%}
 :::
 :::
 
@@ -212,8 +190,6 @@ Ripresa con cellulare  →  Live Link  →  Trasposizione sulla mesh MH
 
 Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 
-::: {.columns}
-::: {.column width="50%"}
 | # | Inquadratura | Focale | Motivazione |
 |---|-------------|--------|-------------|
 | 1 | Totale sulla casa | **200mm** | Taglio familiare e accogliente |
@@ -221,19 +197,29 @@ Cinque inquadrature principali, alternate tramite **Camera Cuts** in Unreal.
 | 3 | Su Dario | **30mm** | Dialogo |
 | 4 | Su Federico | **30mm** | Dialogo |
 | 5 | Dettaglio naso Gustave | **85mm** | Close-up di qualità |
-:::
-::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot Pannello Details CineCamera (per mostrare le impostazioni di Focal Length, Aperture e Focus) -->
-<!-- Inserire: assets/cinecamera_details.jpg -->
-![CineCamera Details](assets/cinecamera_details.jpg){width=100%}
-:::
-:::
+
 
 <!-- SEGNAPOSTO: grid con screenshot delle 5 camere in Unreal -->
-<!-- Inserire: assets/cameras_grid.jpg (montaggio 5 screenshot) -->
-1 -> 2 -> 3 -> 4 -> 5 -> 2
+Sequenza delle camere: 1 → 2 → 3 → 4 → 5 → 2
 
 ---
+
+# 1. Totale sulla casa
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_totale.png)
+
+# 2. Zenitale sul tavolo
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_zenit.png)
+
+# 3. Inquadratura su Dario
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_dario.png)
+
+# 4. Inquadratura su Federico
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_fede.png)
+
+# 5. Inquadratura su "Gustave"
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_gustave.png)
+
+
 
 ## Illuminazione
 
@@ -251,26 +237,18 @@ Ray tracing ambientale (fornito dall'ambiente e dall'engine)
 Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="60%"}
-<!-- SEGNAPOSTO: schema di illuminazione (disegno o screenshot "dietro le quinte" con le icone delle luci visibili nel viewport) -->
-<!-- Inserire: assets/lighting_schema.jpg -->
-![Schema luci](consegna_files/img/intern_lighting.png){width=100%}
-
-
+<!-- SEGNAPOSTO: schema di illuminazione -->
+![Schema luci](TA-G05-Assignment-03/Presentation/consegna_files/img/light_placement.png){width=100%}
 
 :::
 :::
 
 ---
 
-
-
 ## Risultato Finale
 
-
-
-<!-- SEGNAPOSTO: screenshot still della scena finale come fallback -->
-<!-- Inserire: assets/final_still.jpg -->
-![Video Finale](consegna_files/img/intern_lighting.png){width=80% fig-align="center"}
+<!-- SEGNAPOSTO: video embed della cutscene completa -->
+![Result](TA-G05-Assignment-03/Presentation/consegna_files/vid/MainSequence2_compressed.mp4)
 
 ---
 
@@ -286,17 +264,12 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 ::: {.column width="50%"}
 ### **Criticità e Problemi ❌**
-- **Focus & DOF:** gestione manuale complessa negli shot in movimento.
-- **Mocap Sync:** disallineamento temporale tra body e face capture.
+- **Mocap Sync:** disallineamento temporale tra body e face capture da gestire.
 - **Foot Anchoring:** scivolamenti residui nelle inquadrature zenitali.
-- **Scene Complexity:** gestione dei pesi delle animazioni multiple.
 :::
 :::
 
----
 
 # Grazie per l'attenzione!
 
 *Federico & Dario*
-
-![Frame Finale](consegna_files/img/intern_lighting.png){width=80% fig-align="center"}

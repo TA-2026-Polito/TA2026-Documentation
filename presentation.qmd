@@ -355,6 +355,23 @@ Sequenza delle camere: 1 → 2 → 3 → 4 → 5 → 2
 
 ---
 
+# 1. Totale sulla casa
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_totale.png)
+
+# 2. Zenitale sul tavolo
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_zenit.png)
+
+# 3. Inquadratura su Dario
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_dario.png)
+
+# 4. Inquadratura su Federico
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_fede.png)
+
+# 5. Inquadratura su "Gustave"
+![](TA-G05-Assignment-03/Presentation/consegna_files/img/inq_gustave.png)
+
+
+
 ## Illuminazione
 
 **Setup a tre luci:**
@@ -403,7 +420,6 @@ Due Rect Light dietro ai personaggi — una per Federico, una per Dario
 :::
 :::
 
----
 
 # Grazie per l'attenzione!
 

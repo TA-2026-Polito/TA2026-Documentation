@@ -21,7 +21,7 @@ format:
 
 # ASSIGNMENT 2 
 
-*Ascesa, declino e rinascita di un'idea*
+*Ascesa, declino e rinascita di un Metahuman*
 
 ---
 
@@ -32,14 +32,12 @@ format:
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del video YouTube (Uk1UO-nbqVg) -->
-<!-- Inserire: assets/ref_expedition33.jpg -->
-![Reference — Expedition 33](consegna_files/vid/expedition_referencevideo.mp4){width=100%}
+![Reference — Expedition 33](TA-G05-Assignment-02/Presentation/consegna_files/vid/expedition_referencevideo.mp4){width=100%}
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot di gioco con Gustave e Lune -->
-<!-- Inserire: assets/ref_gustave_lune.jpg -->
-![Gustave in-game](consegna_files/img/gustave_front.jpg){width=100%}
-![Lune in-game](consegna_files/img/lune.jpg){width=100%}
+![Gustave in-game](TA-G05-Assignment-02/Presentation/consegna_files/img/gustave_front.jpg){width=100%}
+![Lune in-game](TA-G05-Assignment-02/Presentation/consegna_files/img/lune.jpg){width=100%}
 
 :::
 :::
@@ -53,9 +51,8 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 ::: {.columns}
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot MH editor con il viso in lavorazione -->
-<!-- Inserire: assets/mh_editor_attempt.jpg -->
-![Lune](consegna_files/img/luneMHtrial.jpeg){width=50%}
-![Gustave](consegna_files/img/gustaveComparison.jpeg){width=100%}
+![Lune](TA-G05-Assignment-02/Presentation/consegna_files/img/luneMHtrial.jpeg){width=50%}
+![Gustave](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveComparison.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Problemi riscontrati:**
@@ -70,19 +67,10 @@ Partire dalle **mesh base di MH** e "copiare" il volto a occhio.
 
 ## Tentativo 2 — FaceBuilder su Blender
 
-**Workflow:** scan facciale → MH Identity → import in Unreal
+**Workflow:** scan reference → MH Identity → import in Unreal
 
 <!-- SEGNAPOSTO: schema/diagramma del workflow -->
-<!-- Inserire: assets/workflow_facebuilder.png -->
-![Workflow FaceBuilder](consegna_files/img/gustave_facebuilder.png){width=70% fig-align="center"}
-
----
-
-## Tentativo 2 — Risultato
-
-![](consegna_files/img/gustaveScanTrial.jpeg){width=70% fig-align="center"}
-
-
+![Workflow FaceBuilder](TA-G05-Assignment-02/Presentation/consegna_files/img/gustaveScanTrial.jpeg){width=70% fig-align="center"}
 
 ---
 
@@ -92,30 +80,25 @@ Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri m
 
 ::: {.columns}
 ::: {.column width="50%"}
-![](consegna_files/img/dario_MH.jpeg)
+![](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_scanRC.png)
 :::
 ::: {.column width="50%"}
-![](consegna_files/img/fedeMH.jpeg)
+![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeScan.jpeg)
 :::
 :::
 
 ---
 
-## MetaHuman Creator Authoring
+## Soluzione - Metahuman di Dario e Federico
 
-Documentazione delle scelte effettuate nel Creator per personalizzare i personaggi oltre i preset.
+Si porta il concetto di "post mortem" all'estremo: abbiamo realizzato i nostri metahuman per farli discutere sul precedente fallimento.
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Dettagli Tecnici:**
-- **Skin:** Parametri di texture e rugosità.
-- **Eyes:** Configurazione dell'iride e del colore.
-- **Hair:** Scelta dei preset e modifiche ai materiali.
+![Dario](TA-G05-Assignment-02/Presentation/consegna_files/img/dario_MH.jpeg)
 :::
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: Screenshot MH Creator (Pannelli Skin/Eyes/Hair per dimostrare l'authoring e le modifiche effettuate sui preset) -->
-<!-- Inserire: assets/mh_creator_panels.jpg -->
-![Pannelli MetaHuman Creator](consegna_files/img/gustave_broken.jpeg){width=100%}
+![Federico](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeMH.jpeg)
 :::
 :::
 
@@ -125,8 +108,7 @@ Documentazione delle scelte effettuate nel Creator per personalizzare i personag
 
 
 ```
-Video selfie rotante  →  Reality Scan  →  Scan pulito
-      →  MH Identity  →  MetaHuman base  →  Vestiti + capelli
+Video selfie rotante → Reality Scan → Scan pulito → MH Identity → MetaHuman base → Vestiti + capelli
 ```
 
 ::: {.columns}
@@ -136,9 +118,6 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Capelli importati da asset esterni
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Federico (scan → MH) -->
-<!-- Inserire: assets/fede_scan_vs_mh.jpg o .gif -->
-![Federico — scan → MetaHuman](consegna_files/img/fedeScan.jpeg){width=100%}
 :::
 ::: {.column width="50%"}
 **Dario**
@@ -146,9 +125,6 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 - Barba e baffi da libreria MH
 - Clothes importati e fittati
 
-<!-- SEGNAPOSTO: before/after Dario (scan → MH) -->
-<!-- Inserire: assets/dario_scan_vs_mh.jpg o .gif -->
-![Dario — scan → MetaHuman](consegna_files/img/dario_scanRC.png){width=100%}
 :::
 :::
 
@@ -160,34 +136,19 @@ Video selfie rotante  →  Reality Scan  →  Scan pulito
 
 ::: {.columns}
 ::: {.column width="50%"}
-<!-- SEGNAPOSTO: screenshot del lavoro capelli su Blender (venuto bene) -->
-<!-- Inserire: assets/hair_blender.jpg -->
-![](consegna_files/img/fedeHairTrial.jpeg){width=100%}
+<!-- SEGNAPOSTO: screenshot del lavoro capelli su Blender -->
+![](TA-G05-Assignment-02/Presentation/consegna_files/img/fedeHairTrial.jpeg){width=100%}
 
 *Il lavoro su Blender era venuto bene...*
 :::
 ::: {.column width="50%"}
 <!-- SEGNAPOSTO: screenshot del problema di import in Unreal -->
-<!-- Inserire: assets/hair_import_fail.jpg -->
-![Import in Unreal — problemi](){width=100%}
+![Import in Unreal — problemi](TA-G05-Assignment-02/Presentation/consegna_files/img/FOTO_CAPELLI_BUGGATI.png){width=100%}
 
 *...ma l'import in Unreal era un incubo.*
 :::
 :::
 
----
-
-## IK Rig & Retargeting
-
-Processo di trasferimento delle animazioni catturate sui nostri MetaHuman.
-
-::: {.columns}
-::: {.column width="50%"}
-**Passaggi Tecnici:**
-- Definizione delle **IK Chains** nel rig sorgente e target.
-- Mappatura delle catene.
-- Aggiustamento della **Retarget Pose** per far combaciare le proporzioni.
-:::
 ---
 
 ## Lessons Learned — Post-Mortem
@@ -204,15 +165,9 @@ Processo di trasferimento delle animazioni catturate sui nostri MetaHuman.
 ### **Criticità e Problemi ❌**
 - **Uncanny Valley:** l'editing manuale a occhio non regge il confronto.
 - **Blender Groom Asset:** pipeline Alembic instabile in Unreal.
-- **IK Retargeting:** distorsioni complesse su vestiti custom.
-- **Optimization:** gestione dei LOD con asset esterni importati.
 :::
 :::
-
----
 
 # Grazie per l'attenzione!
 
 *Federico & Dario*
-
-![Federico & Dario MetaHumans](consegna_files/img/fede_frontview.png){width=80% fig-align="center"}
